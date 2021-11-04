@@ -1,6 +1,7 @@
 {
   "name": "lv-research-database-ui-wireframe",
   "version": "0.1.0",
+  "homepage": "https://werzl.github.io/lv-research-database-ui-wireframe/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
