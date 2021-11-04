@@ -3,7 +3,7 @@ ReactJS wireframe for the Longview internal research database UI.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Legacy SSL
-Currently, the NPM start command is using the `--openssl-legacy-provider` flag which has been [deemed insecure](https://www.openssl.org/docs/manmaster/man7/OSSL_PROVIDER-legacy.html).
+The `start-legacy` command is using the `--openssl-legacy-provider` flag which has been [deemed insecure](https://www.openssl.org/docs/manmaster/man7/OSSL_PROVIDER-legacy.html).
 
 
 ## Available Scripts
