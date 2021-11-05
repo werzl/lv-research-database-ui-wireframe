@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 
 import Navigation from "./components/Navigation/Navigation";
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
+import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 
 import logo from './logo.svg';
 import './App.css';
@@ -42,15 +43,11 @@ function App() {
                   </Route>
 
                   <Route exact path="/">
-                    <p>
-                      Research Dashboard
-                    </p>
+                    <ResearchDashboard />
                   </Route>
 
                   <Route exact path="/ResearchDiary">
-                    <p>
-                      Research Diary
-                    </p>
+                    <ResearchDiary />
                   </Route>
                 </>
               }

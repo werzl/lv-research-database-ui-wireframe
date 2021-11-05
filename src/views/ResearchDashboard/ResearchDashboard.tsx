@@ -1,10 +1,10 @@
 import React from "react";
-import { security } from "../../models/security";
+import { Security } from "../../models/Security";
 
 export interface ResearchDashboardProps {
     allowEdit?: boolean,
     isStatusBarVisible?: boolean,
-    securities?: security[],
+    securities?: Security[],
     displayName?: string
 }
 
