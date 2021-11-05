@@ -1,4 +1,4 @@
-export interface security {
+export interface Security {
     ticker: string,
     securityName: string,
     securityId: number,
