@@ -6,7 +6,6 @@ import Navigation from "./components/Navigation/Navigation";
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
 import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 
-import logo from './logo.svg';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
