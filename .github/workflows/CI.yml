@@ -16,6 +16,9 @@ jobs:
 
     - name: Installation ⏳
       run: npm install
+
+    - name: Install Typescript
+      run: npm install typescript
    
     - name: Build 🧱
       run: npm run build
