@@ -1,5 +1,5 @@
 # lv-research-database-ui-wireframe
-ReactJS wireframe for the Longview internal research database UI.  
+ReactJS wireframe for the research database UI.  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Legacy SSL
