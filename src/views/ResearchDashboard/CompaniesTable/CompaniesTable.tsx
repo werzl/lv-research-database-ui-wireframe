@@ -14,7 +14,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import { createTheme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 
-import {companiesData} from "./companiesData";
+import { companiesData } from "./companiesData";
+
+import styles from "./CompaniesTable.module.scss";
 
 function escapeRegExp(value: string) {
 	return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
@@ -115,8 +117,9 @@ export default function QuickFilteringGrid() {
 	}, [data.rows]);
 
 	return (
-		<div style={{ height: 400, width: '100%' }}>
+		<div style={{ height: '100%', width: '100%' }}>
 			<DataGrid
+				className={styles.dataGrid}
 				components={{ Toolbar: QuickSearchToolbar }}
 				rows={rows}
 				columns={data.columns as GridColumns}
@@ -128,6 +131,7 @@ export default function QuickFilteringGrid() {
 					},
 				}}
 				hideFooterSelectedRowCount
+				disableSelectionOnClick
 			/>
 		</div>
 	);
