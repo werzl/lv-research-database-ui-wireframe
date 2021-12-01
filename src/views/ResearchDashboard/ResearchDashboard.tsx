@@ -18,7 +18,7 @@ const ResearchDashboard = () => {
             <Container className="mt-5">
                 <Row>
                     <Col className="text-center">
-                        <div>Dashboard</div>
+                        <div>Research Dashboard</div>
                     </Col>
                 </Row>
 
