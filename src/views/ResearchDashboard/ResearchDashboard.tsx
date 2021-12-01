@@ -1,4 +1,5 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { Security } from "../../models/Security";
 
 export interface ResearchDashboardProps {
@@ -13,8 +14,13 @@ export type TResearchDashboard = React.ReactElement<ResearchDashboardProps>;
 const ResearchDashboard = () => {
     return (
         <div>
-            
-            <div>Dashboard</div>
+            <Container>
+                <Row>
+                    <Col className="text-center">
+                        <div>Dashboard</div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 }
