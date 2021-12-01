@@ -1,6 +1,7 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import { Security } from "../../models/Security";
+import CompaniesTable from "./CompaniesTable/CompaniesTable";
 
 export interface ResearchDashboardProps {
     allowEdit?: boolean,
@@ -14,10 +15,16 @@ export type TResearchDashboard = React.ReactElement<ResearchDashboardProps>;
 const ResearchDashboard = () => {
     return (
         <div>
-            <Container>
+            <Container className="mt-5">
                 <Row>
                     <Col className="text-center">
                         <div>Dashboard</div>
+                    </Col>
+                </Row>
+
+                <Row className="mt-5">
+                    <Col>
+                        <CompaniesTable />
                     </Col>
                 </Row>
             </Container>
