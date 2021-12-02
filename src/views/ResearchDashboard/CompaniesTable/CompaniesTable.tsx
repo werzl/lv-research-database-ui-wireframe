@@ -8,7 +8,6 @@ import {
 	GridToolbarDensitySelector,
 	GridToolbarFilterButton,
 } from '@mui/x-data-grid';
-import { useDemoData } from '@mui/x-data-grid-generator';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
 import { createTheme } from '@mui/material/styles';
@@ -89,7 +88,7 @@ QuickSearchToolbar.propTypes = {
 	value: PropTypes.string.isRequired,
 };
 
-export default function QuickFilteringGrid() {
+export default function CompaniesTable() {
 	// const { data } = useDemoData({
 	// 	dataSet: 'Commodity',
 	// 	rowLength: 100,
