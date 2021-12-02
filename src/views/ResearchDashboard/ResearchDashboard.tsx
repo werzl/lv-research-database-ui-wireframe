@@ -1,7 +1,9 @@
 import React from "react";
-import { Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Security } from "../../models/Security";
 import CompaniesTable from "./CompaniesTable/CompaniesTable";
+
+import { Link } from "react-router-dom";
 
 export interface ResearchDashboardProps {
     allowEdit?: boolean,
@@ -19,6 +21,14 @@ const ResearchDashboard = () => {
                 <Row>
                     <Col className="text-center">
                         <div>Research Dashboard</div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+                        <Link to="/AbbeyNationalPLC">
+                            Abbey National PLC
+                        </Link>
                     </Col>
                 </Row>
 
