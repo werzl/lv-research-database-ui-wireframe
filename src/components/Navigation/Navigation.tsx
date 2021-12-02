@@ -10,8 +10,8 @@ export interface NavigationProps {
 const Navigation = (props: NavigationProps) => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-            <Navbar.Brand>
-                Longview Partners
+            <Navbar.Brand className="ms-2">
+                <h3>Logo</h3>
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

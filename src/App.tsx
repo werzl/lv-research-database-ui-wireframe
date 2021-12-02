@@ -9,6 +9,7 @@ import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CompanyPage from "./views/ResearchDashboard/CompanyPage/CompanyPage";
 
 function App() {
   const [user, setUser] = useState<any>(null);
@@ -47,6 +48,19 @@ function App() {
 
                   <Route exact path="/ResearchDiary">
                     <ResearchDiary />
+                  </Route>
+
+                  {/* TODO: Remove */}
+                  <Route path="/AbbeyNationalPLC">
+                    <CompanyPage
+                      companyName="Abbey National PLC"
+                      ticker="ANL LN"
+                      price={2.75}
+                      currency="EUR"
+                      fmv={15}
+                      dr={2}
+                      tg={1}
+                      upside={12.25}/>
                   </Route>
                 </>
               }
