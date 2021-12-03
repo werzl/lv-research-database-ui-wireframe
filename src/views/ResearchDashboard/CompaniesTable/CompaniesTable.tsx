@@ -15,8 +15,6 @@ import { createStyles, makeStyles } from '@mui/styles';
 
 import { companiesData } from "./companiesData";
 
-import styles from "./CompaniesTable.module.scss";
-
 function escapeRegExp(value: string) {
 	return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }

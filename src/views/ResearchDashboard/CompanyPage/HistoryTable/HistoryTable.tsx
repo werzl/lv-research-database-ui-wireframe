@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import {
@@ -15,7 +14,6 @@ import { createTheme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 
 import { historyData } from "./historyData";
-import { formatDate } from '../../../../common/dateHelpers';
 
 function escapeRegExp(value: string) {
     return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
@@ -48,39 +46,39 @@ const useStyles = makeStyles(
     { defaultTheme },
 );
 
-function QuickSearchToolbar(props: any) {
-    const classes = useStyles();
+// function QuickSearchToolbar(props: any) {
+//     const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
-            <div>
-                <GridToolbarFilterButton />
-                <GridToolbarDensitySelector />
-            </div>
-            <TextField
-                variant="standard"
-                value={props.value}
-                onChange={props.onChange}
-                placeholder="Search…"
-                className={classes.textField}
-                InputProps={{
-                    startAdornment: <SearchIcon fontSize="small" />,
-                    endAdornment: (
-                        <IconButton
-                            title="Clear"
-                            aria-label="Clear"
-                            size="small"
-                            style={{ visibility: props.value ? 'visible' : 'hidden' }}
-                            onClick={props.clearSearch}
-                        >
-                            <ClearIcon fontSize="small" />
-                        </IconButton>
-                    ),
-                }}
-            />
-        </div>
-    );
-}
+//     return (
+//         <div className={classes.root}>
+//             <div>
+//                 <GridToolbarFilterButton />
+//                 <GridToolbarDensitySelector />
+//             </div>
+//             <TextField
+//                 variant="standard"
+//                 value={props.value}
+//                 onChange={props.onChange}
+//                 placeholder="Search…"
+//                 className={classes.textField}
+//                 InputProps={{
+//                     startAdornment: <SearchIcon fontSize="small" />,
+//                     endAdornment: (
+//                         <IconButton
+//                             title="Clear"
+//                             aria-label="Clear"
+//                             size="small"
+//                             style={{ visibility: props.value ? 'visible' : 'hidden' }}
+//                             onClick={props.clearSearch}
+//                         >
+//                             <ClearIcon fontSize="small" />
+//                         </IconButton>
+//                     ),
+//                 }}
+//             />
+//         </div>
+//     );
+// }
 
 
 export default function CompaniesTable() {

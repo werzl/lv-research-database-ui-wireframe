@@ -1,5 +1,5 @@
 import { GridValueGetterParams } from "@mui/x-data-grid";
-import { formatDate, randomDate, randomFormattedDate } from "../../../../common/dateHelpers";
+import { formatDate, randomDate } from "../../../../common/dateHelpers";
 
 const today = new Date();
 const lastYear = new Date(new Date(today).setFullYear(today.getFullYear() - 1));
