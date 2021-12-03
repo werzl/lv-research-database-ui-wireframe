@@ -15,8 +15,6 @@ import { createStyles, makeStyles } from '@mui/styles';
 
 import { companiesData } from "./companiesData";
 
-import styles from "./CompaniesTable.module.scss";
-
 function escapeRegExp(value: string) {
 	return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
@@ -118,7 +116,7 @@ export default function CompaniesTable() {
 	return (
 		<div style={{ height: '100%', width: '100%' }}>
 			<DataGrid
-				className={styles.dataGrid}
+				className="dataGrid"
 				components={{ Toolbar: QuickSearchToolbar }}
 				rows={rows}
 				columns={data.columns as GridColumns}

@@ -1,5 +1,6 @@
 import React from "react";
-import { Col, Container, Row, Tabs, Tab } from "react-bootstrap";
+import { Col, Container, Row, Tabs, Tab, Card, Form } from "react-bootstrap";
+import HistoryTable from "./HistoryTable/HistoryTable";
 
 import styles from "./CompanyPage.module.scss";
 
@@ -16,7 +17,7 @@ export interface CompanyPageProps {
 
 const CompanyPage = (props: CompanyPageProps) => {
     return (
-        <Container>
+        <Container className="mt-5">
             <Row>
                 <Col className="text-center">
                     <h1>{props.companyName}</h1>
@@ -33,7 +34,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                             &nbsp;<b>FMV:</b> {props.fmv} |
                             &nbsp;<b>DR:</b> {props.dr} |
                             &nbsp;<b>TG:</b> {props.tg} |
-                            &nbsp;<b>Upside:</b> {props.upside} |
+                            &nbsp;<b>Upside:</b> {props.upside}
                         </p>
                     </span>
                 </Col>
@@ -47,13 +48,33 @@ const CompanyPage = (props: CompanyPageProps) => {
                         className="mb-3">
 
                         <Tab eventKey="history" title="History">
-                            History
+                            <HistoryTable />
                         </Tab>
                         <Tab eventKey="price" title="Price">
                             Stock Price
                         </Tab>
                         <Tab eventKey="timeline" title="Timeline">
-                            List
+                            <Card>
+                                <Card.Header>
+                                    Parameters
+                                </Card.Header>
+                                <Card.Body>
+                                    <br/><br/><br/>
+                                </Card.Body>
+                            </Card>
+
+                            <Card className="mt-5">
+                                <Card.Header>
+                                    Comments
+                                </Card.Header>
+                                <Card.Body>
+                                    <Form>
+                                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                            <Form.Control as="textarea" rows={3} />
+                                        </Form.Group>
+                                    </Form>
+                                </Card.Body>
+                            </Card>
                         </Tab>
                     </Tabs>
                 </Col>

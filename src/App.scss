@@ -36,6 +36,17 @@
   }
 }
 
+/* MUI Customisation */
 .MuiDataGrid-columnHeaders{
   border-bottom: none;
+}
+
+.MuiDataGrid-root {
+  border: none !important;
+}
+
+.dataGrid {
+  *:focus {
+      outline: none !important;
+  }
 }
