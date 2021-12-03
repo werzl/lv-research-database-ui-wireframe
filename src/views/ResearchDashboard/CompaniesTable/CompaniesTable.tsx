@@ -118,7 +118,7 @@ export default function CompaniesTable() {
 	return (
 		<div style={{ height: '100%', width: '100%' }}>
 			<DataGrid
-				className={styles.dataGrid}
+				className="dataGrid"
 				components={{ Toolbar: QuickSearchToolbar }}
 				rows={rows}
 				columns={data.columns as GridColumns}
