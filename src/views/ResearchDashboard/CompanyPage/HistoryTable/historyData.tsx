@@ -1,4 +1,5 @@
-import { GridValueGetterParams } from "@mui/x-data-grid";
+import { Tooltip } from "@mui/material";
+import { GridRenderCellParams, GridValueGetterParams } from "@mui/x-data-grid";
 import { formatDate, randomDate } from "../../../../common/dateHelpers";
 
 const today = new Date();
@@ -18,14 +19,29 @@ export const historyData = {
         {
             field: "attachments",
             headerName: "Attachments",
-            width: 125
+            width: 125,
+            headerClassName: "companyPage-historyTable-attachments",
+            cellClassName: "companyPage-historyTable-attachments"
+        },
+        {
+            field: "comments",
+            headerName: "Comments",
+            width: 550,
+            renderCell: (params: GridRenderCellParams<string>) => {
+                return (
+                    <Tooltip title={params.row.comments}>
+                        <div className="companyPage-historyTable-comments-cell">{params.row.comments}</div>
+                    </Tooltip>
+                )
+            }
         }
     ],
     rows: [
         {
             id: "1",
             date: today,
-            attachments: 1
+            attachments: 1,
+            comments: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, risus non finibus commodo, erat purus finibus risus, sed blandit dolor magna quis dui. Pellentesque eget rutrum urna. Praesent rutrum, sem non sagittis bibendum, tellus nisi aliquet augue, eu blandit ex metus id nisl. Nulla et lobortis mauris. Nam molestie arcu id tellus lobortis euismod. Nunc eget commodo neque. Integer sollicitudin dignissim ante, sed venenatis lectus semper non. Sed at luctus ligula."
         },
         {
             id: "2",

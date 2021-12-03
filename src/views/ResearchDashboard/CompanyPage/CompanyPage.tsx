@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Container, Row, Tabs, Tab, Card, Form } from "react-bootstrap";
 import HistoryTable from "./HistoryTable/HistoryTable";
 
-import styles from "./CompanyPage.module.scss";
+import "./CompanyPage.scss";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -26,7 +26,7 @@ const CompanyPage = (props: CompanyPageProps) => {
 
             <Row>
                 <Col className="text-center">
-                    <span className={styles.companyInfo}>
+                    <span className="companyInfo">
                         <p>
                             <b>Ticker:</b> {props.ticker}  |
                             &nbsp;<b>Price:</b> {props.price} |
