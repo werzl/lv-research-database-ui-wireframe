@@ -14,7 +14,7 @@ export const companiesData = {
 		{
 			field: "security",
 			headerName: "Security",
-			width: 200,
+			width: 300,
 			editable: false
 		},
 		{
