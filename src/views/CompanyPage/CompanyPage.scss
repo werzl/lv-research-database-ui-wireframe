@@ -1,0 +1,25 @@
+.companyPage-companyInfo {
+    color: #a5a5a5;
+}
+
+.companyPage-historyTable-attachments {
+    text-align: center !important;
+}
+
+.companyPage-historyTable-comments-cell {
+    text-align: justify;
+    text-overflow: ellipsis;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.companyPage-historyTable-comments-tooltip {
+    border-radius: 8px;
+
+    div {
+        background-color: #f8f9fa;
+        color: black;
+        box-shadow: black 0px 1px 11px 0px;
+    }
+}

@@ -9,7 +9,7 @@ import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 import './App.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CompanyPage from "./views/ResearchDashboard/CompanyPage/CompanyPage";
+import CompanyPage from "./views/CompanyPage/CompanyPage";
 
 function App() {
   const [user, setUser] = useState<any>(null);

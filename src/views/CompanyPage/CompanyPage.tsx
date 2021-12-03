@@ -26,7 +26,7 @@ const CompanyPage = (props: CompanyPageProps) => {
 
             <Row>
                 <Col className="text-center">
-                    <span className="companyInfo">
+                    <span className="companyPage-companyInfo">
                         <p>
                             <b>Ticker:</b> {props.ticker}  |
                             &nbsp;<b>Price:</b> {props.price} |
