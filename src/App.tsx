@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation/Navigation";
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
 import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 
-import './App.css';
+import './App.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CompanyPage from "./views/ResearchDashboard/CompanyPage/CompanyPage";
