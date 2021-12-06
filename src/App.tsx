@@ -33,8 +33,8 @@ function App() {
           </Row>
         }
 
-        <Row>
-          <Col>
+        <Row className="h-100">
+          <Col className="h-100">
             <Switch>
               {user !== null &&
                 <>

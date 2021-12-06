@@ -5,6 +5,8 @@ import CompaniesTable from "./CompaniesTable/CompaniesTable";
 
 import { Link } from "react-router-dom";
 
+import "./ResearchDashboard.scss";
+
 export interface ResearchDashboardProps {
     allowEdit?: boolean,
     isStatusBarVisible?: boolean,
@@ -16,29 +18,27 @@ export type TResearchDashboard = React.ReactElement<ResearchDashboardProps>;
 
 const ResearchDashboard = () => {
     return (
-        <div>
-            <Container className="mt-5">
-                <Row>
-                    <Col className="text-center">
-                        <div>Research Dashboard</div>
-                    </Col>
-                </Row>
+        <Container className="mt-5 h-100">
+            <Row>
+                <Col className="text-center">
+                    <h5>Securities</h5>
+                </Col>
+            </Row>
 
-                <Row>
-                    <Col>
-                        <Link to="/AbbeyNationalPLC">
-                            Abbey National PLC
-                        </Link>
-                    </Col>
-                </Row>
+            <Row>
+                <Col>
+                    <Link to="/AbbeyNationalPLC">
+                        Abbey National PLC
+                    </Link>
+                </Col>
+            </Row>
 
-                <Row className="mt-5">
-                    <Col>
-                        <CompaniesTable />
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+            <Row className="mt-5 h-100">
+                <Col>
+                    <CompaniesTable />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

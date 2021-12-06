@@ -9,7 +9,7 @@ export interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" variant="light" style={{backgroundColor: "white"}}>
             <Navbar.Brand className="ms-2">
                 <h3>Longview Partners</h3>
             </Navbar.Brand>
