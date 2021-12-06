@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export interface NavigationProps {
     user: any,
@@ -19,15 +20,19 @@ const Navigation = (props: NavigationProps) => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <LinkContainer to="/">
-                        <Nav.Link>Research Dashboard</Nav.Link>
+                        <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
 
-                    <LinkContainer to="/ResearchDiary">
-                        <Nav.Link>Research Diary</Nav.Link>
+                    <LinkContainer to="/Diary">
+                        <Nav.Link>Diary</Nav.Link>
+                    </LinkContainer>
+
+                    <LinkContainer to="/Team">
+                        <Nav.Link>Team</Nav.Link>
                     </LinkContainer>
                 </Nav>
 
-                <Nav>
+                <Nav className="w-100 text-right">
                     {props.user === null &&
                         <LinkContainer to="/Login">
                             <Nav.Link>
@@ -40,7 +45,7 @@ const Navigation = (props: NavigationProps) => {
                         <>
                             <LinkContainer to="/Login" onClick={() => props.onLogout()}>
                                 <Nav.Link>
-                                    Logout
+                                    <LogoutIcon />
                                 </Nav.Link>
                             </LinkContainer>
                         </>

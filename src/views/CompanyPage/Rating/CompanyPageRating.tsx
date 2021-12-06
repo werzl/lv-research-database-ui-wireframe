@@ -1,81 +1,74 @@
 import React from "react";
-import { Card, Col, Form, Row, Table } from "react-bootstrap";
 
-import RatingDropDown from "./RatingDropDown";
+import { Button, Card, Col, Form, Row, Table } from "react-bootstrap";
+import Check from "@mui/icons-material/Check";
+import BarChartIcon from '@mui/icons-material/BarChart';
+import SsidChartIcon from '@mui/icons-material/SsidChart';
+import InfoIcon from '@mui/icons-material/Info';
+import { Tooltip } from "@mui/material";
+
+import RatingCard from "../../../components/rating/RatingCard";
 
 const CompanyPageRating = () => {
     return (
         <div className="mt-5">
             <Row>
-                <Col lg={3}></Col>
-                <Col lg={6}>
-                    <Card className="border-0">
-                        <Card.Header>
-                            Current rating (most recently approved):
-                        </Card.Header>
+                <Col lg={3}>
+                    <RatingCard heading="Quality" value={1} icon={<Check className="companyPage-rating-card-check" />} />
+                </Col>
 
-                        <Card.Body>
-                            <Form>
-                                <Table className="companyPage-rating-table" responsive>
-                                    <thead>
-                                        <tr>
-                                            <td>Quality</td>
-                                            <td>Fundamentals</td>
-                                            <td>FMV</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>2500</td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
+                <Col lg={3}>
+                    <RatingCard heading="Fundamentals" value={2} icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
+                </Col>
 
-                            </Form>
-                        </Card.Body>
-                    </Card>
+                <Col lg={3}>
+                    <RatingCard heading="FMV" value={15} icon={<SsidChartIcon className="companyPage-rating-card-fmv" />} />
+                </Col>
+
+                <Col lg={3}>
+                    <Tooltip title="Most recently approved ratings." classes={{ popper: "companyPage-rating-info-tooltip" }} placement="top">
+                        <div style={{ cursor: "pointer", width: "10%" }}><InfoIcon /></div>
+                    </Tooltip>
                 </Col>
             </Row>
 
-
-            {/* <Row>
+            <Row className="mt-5">
                 <Col>
-                <p>Current rating (most recently approved):</p>
+                    <h5>The following ratings are pending approval</h5>
                 </Col>
-                </Row>
-                
-            <Row>
-                <Col lg="4"></Col>
-                <Col lg="4">
-                    <Form>
-                        <Table className="companyPage-rating-table" bordered>
-                            <thead>
-                                <tr>
-                                    <td>Quality</td>
-                                    <td>Fundamentals</td>
-                                    <td>FMV</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        2500
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
+            </Row>
 
-                    </Form>
+            <Row>
+                <Col lg={6}>
+                    <Card>
+                        <Form>
+                            <Table className="companyPage-rating-table text-center">
+                                <thead>
+                                    <tr>
+                                        <td><h6>Quality</h6></td>
+                                        <td><h6>FMV</h6></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Button variant="outline-primary">Approve</Button></td>
+                                        <td><Button variant="outline-primary">Approve</Button></td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </Form>
+                    </Card>
                 </Col>
-            </Row> */}
+
+                <Col lg={3} className="text-center">
+                    <Button variant="outline-primary" className="companyPage-rating-approveAll-button">Approve All</Button>
+                </Col>
+                
+            </Row>
         </div>
     );
 }
