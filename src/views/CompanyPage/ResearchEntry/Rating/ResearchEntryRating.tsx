@@ -1,6 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import RatingDropDown from "../../components/rating/RatingDropDown";
+import RatingDropDown from "../../../../components/rating/RatingDropDown";
 
 const ResearchEntryRating = () => <Table className="companyPage-rating-table">
     <thead>

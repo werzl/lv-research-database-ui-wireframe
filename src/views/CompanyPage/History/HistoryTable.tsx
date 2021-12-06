@@ -92,16 +92,16 @@ export default function CompaniesTable(props: HistoryTableProps) {
     // 	maxColumns: 6,
     // });
 
-    const data = historyData(props.companyName.replaceAll(" ", ""));
+    const data = historyData;
 
     const [searchText, setSearchText] = React.useState('');
     const [rows, setRows] = React.useState(data.rows);
     const [sortModel, setSortModel] = React.useState<GridSortModel>([
         {
-          field: 'date',
-          sort: 'desc',
+            field: 'date',
+            sort: 'desc',
         },
-      ]);
+    ]);
 
     const requestSearch = (searchValue: string) => {
         setSearchText(searchValue);
