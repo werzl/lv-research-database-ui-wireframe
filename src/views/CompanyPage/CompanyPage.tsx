@@ -36,7 +36,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                 </Col>
             </Row>
 
-            <Row className="mt-5">
+            <Row className="mt-3">
                 <Col className="text-center">
                     <h1>{props.companyName}</h1>
                 </Col>
