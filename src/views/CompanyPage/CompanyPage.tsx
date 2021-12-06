@@ -73,7 +73,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                         </Tab>
 
                         <Tab eventKey="history" title="History">
-                            <HistoryTable />
+                            <HistoryTable companyName={props.companyName}/>
                         </Tab>
 
                         <Tab eventKey="price" title="Price">

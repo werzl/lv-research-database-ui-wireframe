@@ -15,6 +15,10 @@ import {
 
 import { historyData } from "./historyData";
 
+export interface HistoryTableProps {
+    companyName: string
+}
+
 function escapeRegExp(value: string) {
     return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
@@ -81,14 +85,14 @@ function escapeRegExp(value: string) {
 // }
 
 
-export default function CompaniesTable() {
+export default function CompaniesTable(props: HistoryTableProps) {
     // const { data } = useDemoData({
     // 	dataSet: 'Commodity',
     // 	rowLength: 100,
     // 	maxColumns: 6,
     // });
 
-    const data = historyData;
+    const data = historyData(props.companyName.replaceAll(" ", ""));
 
     const [searchText, setSearchText] = React.useState('');
     const [rows, setRows] = React.useState(data.rows);

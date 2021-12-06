@@ -9,10 +9,12 @@ import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 import './App.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { companiesData } from "./views/ResearchDashboard/CompaniesTable/companiesData";
 import CompanyPage from "./views/CompanyPage/CompanyPage";
 
 function App() {
   const [user, setUser] = useState<any>(null);
+  const cd: any = companiesData;
 
   const signIn = () => {
     setUser("not null");
@@ -50,8 +52,25 @@ function App() {
                     <ResearchDiary />
                   </Route>
 
+                  {cd.rows.map((row: any) => {
+                    return (
+                      <Route path={`/${row.security.replaceAll(" ", "")}`}>
+                        <CompanyPage
+                          key={row.id}
+                          companyName={row.security}
+                          ticker={row.ticker}
+                          price={8}
+                          currency="EUR"
+                          fmv={15}
+                          dr={8}
+                          tg={4.5}
+                          upside={30.25} />
+                      </Route>
+                    )
+                  })}
+
                   {/* TODO: Remove */}
-                  <Route path="/AbbeyNationalPLC">
+                  {/* <Route path="/AbbeyNationalPLC">
                     <CompanyPage
                       companyName="Abbey National PLC"
                       ticker="ANL LN"
@@ -61,7 +80,7 @@ function App() {
                       dr={8}
                       tg={4.5}
                       upside={30.25}/>
-                  </Route>
+                  </Route> */}
                 </>
               }
 

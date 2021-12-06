@@ -25,14 +25,6 @@ const ResearchDashboard = () => {
                 </Col>
             </Row>
 
-            <Row>
-                <Col>
-                    <Link to="/AbbeyNationalPLC">
-                        Abbey National PLC
-                    </Link>
-                </Col>
-            </Row>
-
             <Row className="mt-5 h-100">
                 <Col>
                     <CompaniesTable />
