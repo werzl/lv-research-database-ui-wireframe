@@ -48,11 +48,14 @@ const CompanyPage = (props: CompanyPageProps) => {
                         <p>
                             <b>Ticker:</b> {props.ticker}  |
                             &nbsp;<b>Price:</b> {props.price} |
-                            &nbsp;<b>Currency:</b> {props.currency} |
+                            &nbsp;<b>Currency:</b> {props.currency}
+                        </p>
+
+                        <p>
                             &nbsp;<b>FMV:</b> {props.fmv} |
-                            &nbsp;<b>DR:</b> {props.dr} |
-                            &nbsp;<b>TG:</b> {props.tg} |
-                            &nbsp;<b>Upside:</b> {props.upside}
+                            &nbsp;<b>Discount Rate:</b> {props.dr}% |
+                            &nbsp;<b>Terminal Growth:</b> {props.tg}% |
+                            &nbsp;<b>Upside:</b> {props.upside}%
                         </p>
                     </span>
                 </Col>

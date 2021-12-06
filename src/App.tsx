@@ -55,12 +55,12 @@ function App() {
                     <CompanyPage
                       companyName="Abbey National PLC"
                       ticker="ANL LN"
-                      price={2.75}
+                      price={8}
                       currency="EUR"
                       fmv={15}
-                      dr={2}
-                      tg={1}
-                      upside={12.25}/>
+                      dr={8}
+                      tg={4.5}
+                      upside={30.25}/>
                   </Route>
                 </>
               }
