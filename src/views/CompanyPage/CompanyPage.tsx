@@ -1,8 +1,10 @@
 import React from "react";
-import { Col, Container, Row, Tabs, Tab, Card, Form } from "react-bootstrap";
-import HistoryTable from "./HistoryTable/HistoryTable";
+import { Col, Container, Row, Tabs, Tab, Card, Form, Breadcrumb } from "react-bootstrap";
+import CompanyPageRating from "./Rating/CompanyPageRating";
+import HistoryTable from "./History/HistoryTable";
 
 import "./CompanyPage.scss";
+import { Link } from "react-router-dom";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -19,6 +21,22 @@ const CompanyPage = (props: CompanyPageProps) => {
     return (
         <Container className="mt-5">
             <Row>
+                <Col>
+                    <Breadcrumb>
+                        <Breadcrumb.Item>
+                            <Link to="/">
+                                Securities
+                            </Link>
+                        </Breadcrumb.Item>
+
+                        <Breadcrumb.Item active>
+                            {props.companyName}
+                        </Breadcrumb.Item>
+                    </Breadcrumb>
+                </Col>
+            </Row>
+
+            <Row className="mt-5">
                 <Col className="text-center">
                     <h1>{props.companyName}</h1>
                 </Col>
@@ -40,26 +58,32 @@ const CompanyPage = (props: CompanyPageProps) => {
                 </Col>
             </Row>
 
-            <Row className="mt-5">
+            <Row className="mt-3">
                 <Col>
                     <Tabs
-                        defaultActiveKey="history"
+                        defaultActiveKey="rating"
                         transition={true}
                         className="mb-3">
+
+                        <Tab eventKey="rating" title="Rating">
+                            <CompanyPageRating />
+                        </Tab>
 
                         <Tab eventKey="history" title="History">
                             <HistoryTable />
                         </Tab>
+
                         <Tab eventKey="price" title="Price">
                             Stock Price
                         </Tab>
+
                         <Tab eventKey="timeline" title="Timeline">
                             <Card>
                                 <Card.Header>
                                     Parameters
                                 </Card.Header>
                                 <Card.Body>
-                                    <br/><br/><br/>
+                                    <br /><br /><br />
                                 </Card.Body>
                             </Card>
 

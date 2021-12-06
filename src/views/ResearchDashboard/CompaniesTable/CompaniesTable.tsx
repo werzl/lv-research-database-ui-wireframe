@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import {
@@ -14,8 +13,6 @@ import { createTheme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 
 import { companiesData } from "./companiesData";
-
-import "./CompaniesTable.scss";
 
 function escapeRegExp(value: string) {
 	return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
@@ -82,12 +79,6 @@ function QuickSearchToolbar(props: any) {
 	);
 }
 
-QuickSearchToolbar.propTypes = {
-	clearSearch: PropTypes.func.isRequired,
-	onChange: PropTypes.func.isRequired,
-	value: PropTypes.string.isRequired,
-};
-
 export default function CompaniesTable() {
 	// const { data } = useDemoData({
 	// 	dataSet: 'Commodity',
@@ -116,9 +107,8 @@ export default function CompaniesTable() {
 	}, [data.rows]);
 
 	return (
-		<div style={{ height: '100%', width: '100%' }}>
+		<div className="dashboard-companiesTable-dataGrid">
 			<DataGrid
-				className="dataGrid"
 				components={{ Toolbar: QuickSearchToolbar }}
 				rows={rows}
 				columns={data.columns as GridColumns}
