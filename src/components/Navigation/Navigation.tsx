@@ -10,7 +10,7 @@ export interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
     return (
-        <Navbar collapseOnSelect expand="lg" variant="light" style={{backgroundColor: "white"}}>
+        <Navbar collapseOnSelect expand="lg" variant="light" style={{ backgroundColor: "white" }}>
             <Navbar.Brand className="ms-2">
                 <h3>Longview Partners</h3>
             </Navbar.Brand>
@@ -31,27 +31,26 @@ const Navigation = (props: NavigationProps) => {
                         <Nav.Link>Team</Nav.Link>
                     </LinkContainer>
                 </Nav>
-
-                <Nav className="w-100 text-right">
-                    {props.user === null &&
-                        <LinkContainer to="/Login">
-                            <Nav.Link>
-                                Login
-                            </Nav.Link>
-                        </LinkContainer>
-                    }
-
-                    {props.user !== null &&
-                        <>
-                            <LinkContainer to="/Login" onClick={() => props.onLogout()}>
-                                <Nav.Link>
-                                    <LogoutIcon />
-                                </Nav.Link>
-                            </LinkContainer>
-                        </>
-                    }
-                </Nav>
             </Navbar.Collapse>
+
+            {props.user === null &&
+                <LinkContainer to="/Login">
+                    <Nav.Link>
+                        Login
+                    </Nav.Link>
+                </LinkContainer>
+            }
+
+            {props.user !== null &&
+                <>
+                    <LinkContainer to="/Login" onClick={() => props.onLogout()}>
+                        <Nav.Link>
+                            <LogoutIcon className="navigation-navbar-logoutLink"/>
+                        </Nav.Link>
+                    </LinkContainer>
+                </>
+            }
+
         </Navbar>
     );
 };

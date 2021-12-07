@@ -3,8 +3,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Security } from "../../models/Security";
 import CompaniesTable from "./CompaniesTable/CompaniesTable";
 
-import { Link } from "react-router-dom";
-
 import "./ResearchDashboard.scss";
 
 export interface ResearchDashboardProps {
