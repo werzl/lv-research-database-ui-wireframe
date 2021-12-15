@@ -14,7 +14,7 @@ import CompanyPage from "./views/CompanyPage/CompanyPage";
 
 function App() {
   const [user, setUser] = useState<any>(null);
-  const cd: any = companiesData;
+  const companies: any = companiesData;
 
   const signIn = () => {
     setUser("not null");
@@ -52,7 +52,7 @@ function App() {
                     <ResearchDiary />
                   </Route>
 
-                  {cd.rows.map((row: any) => {
+                  {companies.rows.map((row: any) => {
                     return (
                       <Route path={`/${row.security.replaceAll(" ", "")}`}>
                         <CompanyPage

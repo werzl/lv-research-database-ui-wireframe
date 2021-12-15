@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Tabs, Tab, Card, Form, Breadcrumb } from "react-bootstrap";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 
@@ -24,6 +24,7 @@ export interface CompanyPageProps {
 
 const CompanyPage = (props: CompanyPageProps) => {
     const { path } = useRouteMatch();
+    const [defaultTab, setDefaultTab] = useState<"rating" | "history" | "price" | "timeline">("rating");
 
     return (
         <Switch>
@@ -34,7 +35,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                             companyName={props.companyName}
                             dateAdded={row.date}
                             id={row.id}
-                            comments={row.comments ?? ""}/>
+                            comments={row.comments ?? ""} />
                     </Route>
                 )
             })}
@@ -85,23 +86,23 @@ const CompanyPage = (props: CompanyPageProps) => {
                     <Row className="mt-3">
                         <Col>
                             <Tabs
-                                defaultActiveKey="rating"
+                                defaultActiveKey={defaultTab}
                                 transition={true}
                                 className="mb-3">
 
-                                <Tab eventKey="rating" title="Rating">
+                                <Tab eventKey="rating" title="Rating" onClick={() => setDefaultTab("rating")}>
                                     <CompanyPageRating />
                                 </Tab>
 
-                                <Tab eventKey="history" title="History">
+                                <Tab eventKey="history" title="History" onClick={() => setDefaultTab("history")}>
                                     <HistoryTable companyName={props.companyName} />
                                 </Tab>
 
-                                <Tab eventKey="price" title="Price">
+                                <Tab eventKey="price" title="Price" onClick={() => setDefaultTab("price")}>
                                     Stock Price
                                 </Tab>
 
-                                <Tab eventKey="timeline" title="Timeline">
+                                <Tab eventKey="timeline" title="Timeline" onClick={() => setDefaultTab("timeline")}>
                                     <Card>
                                         <Card.Header>
                                             Parameters
