@@ -34,7 +34,10 @@ const CompanyPageRating = () => {
 
             <Row className="mt-5">
                 <Col>
-                    <h5>The following ratings are pending approval</h5>
+                    <div className="companyPage-rating-pending-approval-div text-center">
+                        <h5>Pending</h5>
+                        <hr />
+                    </div>
                 </Col>
             </Row>
 
@@ -67,7 +70,7 @@ const CompanyPageRating = () => {
                 <Col lg={3} className="text-center">
                     <Button variant="outline-primary" className="companyPage-rating-approveAll-button">Approve All</Button>
                 </Col>
-                
+
             </Row>
         </div>
     );
