@@ -119,7 +119,7 @@ export default function CompaniesTable(props: HistoryTableProps) {
     }, [data.rows]);
 
     return (
-        <div style={{ height: '100%', width: '100%' }}>
+        <div className="companyPage-historyTable-dataGrid">
             <DataGrid
                 className="dataGrid"
                 rows={rows}

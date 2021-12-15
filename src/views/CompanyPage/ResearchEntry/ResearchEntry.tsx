@@ -25,7 +25,7 @@ const ResearchEntry = (props: ResearchEntryProps) => {
                         </Breadcrumb.Item>
 
                         <Breadcrumb.Item>
-                            <Link to={`/${props.companyName.replace(" ", "")}`}>
+                            <Link to={`/${props.companyName.replaceAll(" ", "")}`}>
                                 {props.companyName}
                             </Link>
                         </Breadcrumb.Item>

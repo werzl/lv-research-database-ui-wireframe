@@ -30,7 +30,7 @@ const CompanyPage = (props: CompanyPageProps) => {
         <Switch>
             {historyData.rows.map(row => {
                 return (
-                    <Route path={`/${props.companyName.replace(" ", "")}/${row.id}`}>
+                    <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.id}`}>
                         <ResearchEntry
                             companyName={props.companyName}
                             dateAdded={row.date}
