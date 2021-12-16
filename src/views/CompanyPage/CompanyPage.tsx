@@ -10,6 +10,7 @@ import { historyData } from "./History/historyData";
 import ResearchEntry from "./ResearchEntry/ResearchEntry";
 
 import "./CompanyPage.scss";
+import PriceGraph from "./Price/PriceGraph";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -99,7 +100,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                                 </Tab>
 
                                 <Tab eventKey="price" title="Price" onClick={() => setDefaultTab("price")}>
-                                    Stock Price
+                                    <PriceGraph />
                                 </Tab>
 
                                 <Tab eventKey="timeline" title="Timeline" onClick={() => setDefaultTab("timeline")}>

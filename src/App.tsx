@@ -59,12 +59,12 @@ function App() {
                           key={row.id}
                           companyName={row.security}
                           ticker={row.ticker}
-                          price={8}
+                          price={30}
                           currency="EUR"
                           fmv={15}
                           dr={8}
                           tg={4.5}
-                          upside={30.25} />
+                          upside={60.5} />
                       </Route>
                     )
                   })}

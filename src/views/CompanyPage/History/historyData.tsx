@@ -2,14 +2,11 @@ import { Tooltip } from "@mui/material";
 import { GridRenderCellParams, GridValueGetterParams } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import { formatDate, randomDate } from "../../../common/dateHelpers";
+import { getCompanyNameFromUrl } from "../../../common/urlHelper";
 
 const today = new Date();
 const lastYear = new Date(new Date(today).setFullYear(today.getFullYear() - 1));
 
-const getCompanyNameFromUrl = () => {
-    const urlParts = window.location.href.split("/");
-    return urlParts[urlParts.length-1];
-}
 
 export const historyData = {
     columns: [
