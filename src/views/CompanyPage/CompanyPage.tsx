@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Tabs, Tab, Card, Form, Breadcrumb } from "react-bootstrap";
+import { Col, Container, Row, Tabs, Tab, Breadcrumb } from "react-bootstrap";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 
 import CompanyPageRating from "./Rating/CompanyPageRating";
@@ -103,29 +103,9 @@ const CompanyPage = (props: CompanyPageProps) => {
                                     <PriceGraph />
                                 </Tab>
 
-                                <Tab eventKey="timeline" title="Timeline" onClick={() => setDefaultTab("timeline")}>
-                                    <Card>
-                                        <Card.Header>
-                                            Parameters
-                                        </Card.Header>
-                                        <Card.Body>
-                                            <br /><br /><br />
-                                        </Card.Body>
-                                    </Card>
-
-                                    <Card className="mt-5">
-                                        <Card.Header>
-                                            Comments
-                                        </Card.Header>
-                                        <Card.Body>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                                    <Form.Control as="textarea" rows={3} />
-                                                </Form.Group>
-                                            </Form>
-                                        </Card.Body>
-                                    </Card>
-                                </Tab>
+                                {/* <Tab eventKey="timeline" title="Timeline" onClick={() => setDefaultTab("timeline")}>
+                                    Timeline
+                                </Tab> */}
                             </Tabs>
                         </Col>
                     </Row>
