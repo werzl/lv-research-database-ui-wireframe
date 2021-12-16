@@ -1,3 +1,5 @@
+import { GridRenderCellParams } from "@mui/x-data-grid";
+import { Link } from "react-router-dom";
 import { formatDate, randomFormattedDate } from "../../../common/dateHelpers";
 
 const today = new Date();
@@ -15,7 +17,12 @@ export const companiesData = {
 			field: "security",
 			headerName: "Security",
 			width: 300,
-			editable: false
+			editable: false,
+			renderCell: (params: GridRenderCellParams<string>) => {
+				return (
+					<Link to={`/${params.value.replaceAll(" ", "")}`}>{params.value}</Link>
+				)
+			}
 		},
 		{
 			field: "dateAdded",

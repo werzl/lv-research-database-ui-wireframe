@@ -45,8 +45,17 @@
   border: none !important;
 }
 
-.dataGrid {
+.dashboard-companiesTable-dataGrid {
   *:focus {
       outline: none !important;
+  }
+}
+
+
+.navigation-navbar-logoutLink {
+  color: #0000008c;
+
+  &:hover {
+    color: black;
   }
 }

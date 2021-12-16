@@ -1,0 +1,104 @@
+.companyPage-companyInfo {
+    color: #a5a5a5;
+}
+
+// Rating
+.companyPage-rating-card {
+    height: 10rem;
+    overflow: hidden;
+
+    h6 {
+        color: #a5a5a5;
+        text-transform: uppercase;
+    }
+
+    .companyPage-rating-card-check,
+    .companyPage-rating-card-fundamentals,
+    .companyPage-rating-card-fmv {
+        width: 100%;
+        height: 50%;
+        margin-top: 0.5rem;
+    }
+
+    .companyPage-rating-card-check {
+        color: #00800070;
+    }
+}
+
+.companyPage-rating-info-tooltip {
+    border-radius: 8px;
+
+    div {
+        background-color: #f8f9fa;
+        color: black;
+        box-shadow: black 0px 1px 11px 0px;
+    }
+}
+
+.companyPage-rating-pending-approval-div {
+    h5 {
+        color: #a5a5a5;
+        text-transform: uppercase;
+    }
+}
+
+.companyPage-rating-table {
+    thead {
+        border: none;
+
+        * {
+            border: none;
+        }
+
+        tr {
+            color: #a5a5a5;
+            text-transform: uppercase;
+        }
+    }
+
+    tbody {
+        border: none !important;
+
+        * {
+            border: none;
+        }
+    }
+}
+
+.companyPage-rating-approveAll-button {
+    margin-top: 3rem;
+    border: none;
+}
+
+// History
+.companyPage-historyTable-dataGrid {
+    background-color: white;
+    width: 100%;
+    height: 65vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.companyPage-historyTable-attachments {
+    text-align: center !important;
+}
+
+.companyPage-historyTable-comments-cell {
+    text-align: justify;
+    text-overflow: ellipsis;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.companyPage-historyTable-comments-tooltip {
+    border-radius: 8px;
+
+    div {
+        background-color: #f8f9fa;
+        color: black;
+        box-shadow: black 0px 1px 11px 0px;
+    }
+}

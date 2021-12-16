@@ -15,6 +15,10 @@ import {
 
 import { historyData } from "./historyData";
 
+export interface HistoryTableProps {
+    companyName: string
+}
+
 function escapeRegExp(value: string) {
     return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
@@ -81,7 +85,7 @@ function escapeRegExp(value: string) {
 // }
 
 
-export default function CompaniesTable() {
+export default function CompaniesTable(props: HistoryTableProps) {
     // const { data } = useDemoData({
     // 	dataSet: 'Commodity',
     // 	rowLength: 100,
@@ -94,10 +98,10 @@ export default function CompaniesTable() {
     const [rows, setRows] = React.useState(data.rows);
     const [sortModel, setSortModel] = React.useState<GridSortModel>([
         {
-          field: 'date',
-          sort: 'desc',
+            field: 'date',
+            sort: 'desc',
         },
-      ]);
+    ]);
 
     const requestSearch = (searchValue: string) => {
         setSearchText(searchValue);
@@ -115,7 +119,7 @@ export default function CompaniesTable() {
     }, [data.rows]);
 
     return (
-        <div style={{ height: '100%', width: '100%' }}>
+        <div className="companyPage-historyTable-dataGrid">
             <DataGrid
                 className="dataGrid"
                 rows={rows}

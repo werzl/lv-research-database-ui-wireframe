@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export interface NavigationProps {
     user: any,
@@ -9,7 +10,7 @@ export interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" variant="light" style={{ backgroundColor: "white" }}>
             <Navbar.Brand className="ms-2">
                 <h3>Longview Partners</h3>
             </Navbar.Brand>
@@ -19,34 +20,37 @@ const Navigation = (props: NavigationProps) => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <LinkContainer to="/">
-                        <Nav.Link>Research Dashboard</Nav.Link>
+                        <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
 
-                    <LinkContainer to="/ResearchDiary">
-                        <Nav.Link>Research Diary</Nav.Link>
+                    <LinkContainer to="/Diary">
+                        <Nav.Link>Diary</Nav.Link>
                     </LinkContainer>
-                </Nav>
 
-                <Nav>
-                    {props.user === null &&
-                        <LinkContainer to="/Login">
-                            <Nav.Link>
-                                Login
-                            </Nav.Link>
-                        </LinkContainer>
-                    }
-
-                    {props.user !== null &&
-                        <>
-                            <LinkContainer to="/Login" onClick={() => props.onLogout()}>
-                                <Nav.Link>
-                                    Logout
-                                </Nav.Link>
-                            </LinkContainer>
-                        </>
-                    }
+                    <LinkContainer to="/Team">
+                        <Nav.Link>Team</Nav.Link>
+                    </LinkContainer>
                 </Nav>
             </Navbar.Collapse>
+
+            {props.user === null &&
+                <LinkContainer to="/Login">
+                    <Nav.Link>
+                        Login
+                    </Nav.Link>
+                </LinkContainer>
+            }
+
+            {props.user !== null &&
+                <>
+                    <LinkContainer to="/Login" onClick={() => props.onLogout()}>
+                        <Nav.Link>
+                            <LogoutIcon className="navigation-navbar-logoutLink"/>
+                        </Nav.Link>
+                    </LinkContainer>
+                </>
+            }
+
         </Navbar>
     );
 };
