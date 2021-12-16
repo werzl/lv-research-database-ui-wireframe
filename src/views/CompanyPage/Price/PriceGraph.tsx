@@ -10,9 +10,6 @@ import {
 	Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { Link } from 'react-router-dom';
-
-import { getCompanyNameFromUrl } from "../../../common/urlHelper";
 
 ChartJS.register(
 	CategoryScale,
