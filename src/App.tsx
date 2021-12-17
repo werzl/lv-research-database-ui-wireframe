@@ -12,6 +12,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { companiesData } from "./views/ResearchDashboard/CompaniesTable/companiesData";
 import CompanyPage from "./views/CompanyPage/CompanyPage";
 
+import { FMV } from "./types/FMV";
+
+const fakeFMV: FMV = {
+  approved: {
+    raw: {
+      timestamp: new Date(),
+      value: 100,
+      upside: 25
+    },
+    adjusted: {
+      timestamp: new Date(),
+      value: 150,
+      upside: 19.5,
+      tg: 3,
+      dr: 8
+    }
+  },
+  unapproved: {
+    raw: {
+      timestamp: new Date(),
+      value: 110,
+      upside: 25
+    },
+    adjusted: {
+      timestamp: new Date(),
+      value: 166,
+      upside: 19.5,
+      tg: 3,
+      dr: 8
+    }
+  }
+};
+
 function App() {
   const [user, setUser] = useState<any>(null);
   const companies: any = companiesData;
@@ -59,12 +92,10 @@ function App() {
                           key={row.id}
                           companyName={row.security}
                           ticker={row.ticker}
+                          primaryAnalyst={row.primaryAnalyst}
                           price={30}
                           currency="EUR"
-                          fmv={15}
-                          dr={8}
-                          tg={4.5}
-                          upside={60.5} />
+                          fmv={fakeFMV} />
                       </Route>
                     )
                   })}

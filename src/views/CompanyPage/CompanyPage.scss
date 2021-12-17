@@ -1,5 +1,21 @@
-.companyPage-companyInfo {
+.companyPage-tagLine {
     color: #a5a5a5;
+}
+
+.companyPage-companyStats {
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    th {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    td {
+        text-align: center;
+        border-bottom: none;
+    }
 }
 
 // Rating
@@ -10,6 +26,7 @@
     h6 {
         color: #a5a5a5;
         text-transform: uppercase;
+        white-space: nowrap;
     }
 
     .companyPage-rating-card-check,
@@ -32,6 +49,16 @@
         background-color: #f8f9fa;
         color: black;
         box-shadow: black 0px 1px 11px 0px;
+    }
+}
+
+.companyPage-rating-approved-rates-table {
+    th {
+        font-weight: bold;
+    }
+
+    td {
+        border-bottom: none;
     }
 }
 
@@ -79,6 +106,7 @@
     overflow-x: hidden;
     border-radius: 6px;
     margin-bottom: 2rem;
+    box-shadow: #00000052 1px 1px 10px 0px;
 }
 
 .companyPage-historyTable-attachments {
