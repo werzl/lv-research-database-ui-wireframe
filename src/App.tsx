@@ -94,7 +94,7 @@ function App() {
                     <header className="App-header">
                       <Route exact path="/Login">
 
-                        <h1>Research Database</h1>
+                        <h1>Research</h1>
 
                         <p>Longview Partners</p>
 
