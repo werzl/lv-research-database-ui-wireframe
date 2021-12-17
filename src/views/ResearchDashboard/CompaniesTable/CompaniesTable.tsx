@@ -119,6 +119,7 @@ export default function CompaniesTable() {
 						clearSearch: () => requestSearch(''),
 					},
 				}}
+				hideFooterPagination
 				hideFooterSelectedRowCount
 				disableSelectionOnClick
 			/>
