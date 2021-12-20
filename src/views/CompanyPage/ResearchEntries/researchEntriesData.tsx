@@ -13,13 +13,13 @@ export const researchEntriesData = {
         {
             field: "sourceId",
             headerName: "Source ID",
-            width: 150,
+            width: 125,
             editable: false
         },
         {
             field: "date",
             headerName: "Date",
-            width: 200,
+            width: 125,
             editable: false,
             valueFormatter: (params: GridValueGetterParams) => {
                 return formatDate(params.value);
@@ -33,14 +33,16 @@ export const researchEntriesData = {
         {
             field: "attachments",
             headerName: "Attachments",
-            width: 125,
+            width: 100,
             headerClassName: "companyPage-historyTable-attachments",
-            cellClassName: "companyPage-historyTable-attachments"
+            cellClassName: "companyPage-historyTable-attachments",
+            sortable: false
         },
         {
             field: "comments",
             headerName: "Comments",
-            width: 550,
+            width: 500,
+            sortable: false,
             renderCell: (params: GridRenderCellParams<string>) => {
                 return (
                     <Tooltip title={params.row.comments ?? ""} classes={{ popper: "companyPage-historyTable-comments-tooltip" }} placement="bottom-end">
@@ -56,8 +58,7 @@ export const researchEntriesData = {
             sourceId: "sourceId1",
             date: today,
             attachments: 1,
-            comments: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, risus non finibus commodo, erat purus finibus risus, sed blandit dolor magna quis dui. Pellentesque eget rutrum urna. Praesent rutrum, sem non sagittis bibendum, tellus nisi aliquet augue, eu blandit ex metus id nisl. Nulla et lobortis mauris. Nam molestie arcu id tellus lobortis euismod. Nunc eget commodo neque. Integer sollicitudin dignissim ante, sed venenatis lectus semper non. Sed at luctus ligula."
-        },
+            comments: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, risus non finibus commodo, erat purus finibus risus, sed blandit dolor magna quis dui. Pellentesque eget rutrum urna. Praesent rutrum, sem non sagittis bibendum, tellus nisi aliquet augue, eu blandit ex metus id nisl. Nulla et lobortis mauris. Nam molestie arcu id tellus lobortis euismod. Nunc eget commodo neque. Integer sollicitudin dignissim ante, sed venenatis lectus semper non. Sed at luctus ligula."        },
         {
             id: "2",
             sourceId: "sourceId2",
