@@ -19,7 +19,7 @@ const ResearchDashboard = () => {
         <Container className="mt-5 h-100">
             <Row>
                 <Col className="text-center">
-                    <h5>Securities</h5>
+                    <h4>Securities</h4>
                 </Col>
             </Row>
 
