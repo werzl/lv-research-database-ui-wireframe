@@ -122,7 +122,7 @@ export default function CompaniesTable() {
 				hideFooterPagination
 				hideFooterSelectedRowCount
 				disableSelectionOnClick
-			/>
+				density="compact" />
 		</div>
 	);
 }

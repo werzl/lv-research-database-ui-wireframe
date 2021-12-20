@@ -135,7 +135,8 @@ export default function CompaniesTable(props: HistoryTableProps) {
                 hideFooterPagination
                 disableSelectionOnClick
                 sortModel={sortModel}
-                onSortModelChange={(model) => setSortModel(model)} />
+                onSortModelChange={(model) => setSortModel(model)}
+                density="compact"/>
         </div>
     );
 }

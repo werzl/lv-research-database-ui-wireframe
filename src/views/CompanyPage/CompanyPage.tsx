@@ -43,7 +43,7 @@ const CompanyPage = (props: CompanyPageProps) => {
             })}
 
             <Route path={path}>
-                <Container className="mt-5">
+                <Container className="mt-5 mb-5">
                     <Row>
                         <Col>
                             <Breadcrumb>
@@ -81,7 +81,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                     <Row className="mt-3">
                         <Col>
                             <Card className="companyPage-companyStats">
-                                <Card.Body>
+                                <Card.Body className="p-1">
                                     <Row>
                                         <Col>
                                             <Table>
