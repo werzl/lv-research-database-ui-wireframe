@@ -22,13 +22,7 @@ ChartJS.register(
 );
 
 export const options = {
-	responsive: true,
-	plugins: {
-		title: {
-			display: true,
-			text: 'Approved FMV',
-		},
-	}
+	responsive: true
 };
 
 const labels = ["2007", "2009", "2011", "2013", "2015", "2017", "2019", "2021", "2023", "2025", "2027", "2029", "2031", "2033", "2035", "2036"];
@@ -38,7 +32,7 @@ export const data = {
 	datasets: [
 		{
 			label: 'FMV',
-			data: [20, 22, 24, 25, 24, 25, 26, 27, 27, 28, 29, 30, 30, 31, 32, 33],
+			data: [88, 89, 90, 90, 91, 92, 93, 94, 95, 95, 94, 94, 95, 98, 98, 100],
 			borderColor: '#0d6efd',
 			backgroundColor: '#0d6efd'
 		}

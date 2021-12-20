@@ -42,18 +42,18 @@ export const data = {
     labels,
     datasets: [
         {
-            label: 'Quality',
-            data: [0, 0, 0, 1, 1, 1, 2, 2],
+            label: 'Fundamentals',
+            data: [0, 0, 0, 3, 3, 2, 2, 2],
             borderColor: '#0d6efd',
             backgroundColor: '#0d6efd'
         }
     ]
 };
 
-const QualityGraph = () => {
+const FundamentalsGraph = () => {
     return <Line
         options={options}
         data={data} />;
 }
 
-export default QualityGraph;
+export default FundamentalsGraph;
