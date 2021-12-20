@@ -5,7 +5,7 @@
 .companyPage-companyStats {
     height: auto;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
 
     th {
         text-align: center;
@@ -15,6 +15,7 @@
     td {
         text-align: center;
         border-bottom: none;
+        white-space: nowrap;
     }
 }
 
@@ -128,5 +129,6 @@
         background-color: #f8f9fa;
         color: black;
         box-shadow: black 0px 1px 11px 0px;
+        font-size: 1rem;
     }
 }

@@ -10,10 +10,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 import CompanyPageRating from "./Rating/CompanyPageRating";
-import HistoryTable from "./History/HistoryTable";
-import { historyData } from "./History/historyData";
+import ResearchEntriesTable from "./ResearchEntries/ResearchEntriesTable";
+import { researchEntriesData } from "./ResearchEntries/researchEntriesData";
 import ResearchEntry from "./ResearchEntry/ResearchEntry";
-import PriceGraph from "./Price/PriceGraph";
+import PriceGraph from "./PriceHistory/PriceGraph";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -30,7 +30,7 @@ const CompanyPage = (props: CompanyPageProps) => {
 
     return (
         <Switch>
-            {historyData.rows.map(row => {
+            {researchEntriesData.rows.map(row => {
                 return (
                     <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.id}`}>
                         <ResearchEntry
@@ -82,7 +82,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                         <Col>
                             <Card className="companyPage-companyStats">
                                 <Card.Body className="p-1">
-                                    <Row>
+                                    <Row className="w-100">
                                         <Col>
                                             <Table>
                                                 <TableHead>
@@ -91,6 +91,10 @@ const CompanyPage = (props: CompanyPageProps) => {
                                                         <TableCell>Primary Analyst</TableCell>
                                                         <TableCell>Price</TableCell>
                                                         <TableCell>Currency</TableCell>
+                                                        <TableCell>Quality</TableCell>
+                                                        <TableCell>Fundamentals</TableCell>
+                                                        <TableCell>FMV</TableCell>
+                                                        <TableCell>FMV (Adjusted)</TableCell>
                                                         <TableCell>Forward P/E at Current Price</TableCell>
                                                         <TableCell>Forward P/E at FMV</TableCell>
                                                         <TableCell>Forward P/E at Adjusted FMV</TableCell>
@@ -104,6 +108,10 @@ const CompanyPage = (props: CompanyPageProps) => {
                                                         <TableCell>{props.primaryAnalyst}</TableCell>
                                                         <TableCell>30</TableCell>
                                                         <TableCell>EUR</TableCell>
+                                                        <TableCell>1</TableCell>
+                                                        <TableCell>2</TableCell>
+                                                        <TableCell>100</TableCell>
+                                                        <TableCell>150</TableCell>
                                                         <TableCell>25.64</TableCell>
                                                         <TableCell>50.3</TableCell>
                                                         <TableCell>55.2</TableCell>
@@ -118,50 +126,6 @@ const CompanyPage = (props: CompanyPageProps) => {
                         </Col>
                     </Row>
 
-                    {/* <Row className="mt-3">
-                        <Col>
-                            <Card className="companyPage-companyInfo">
-                                <Card.Body>
-                                    <Row>
-                                        <Col lg={3}>
-                                            <Table>
-                                                <TableHead>
-                                                    <TableRow>
-                                                        <TableCell colSpan={4} className="text-center">FMV</TableCell>
-                                                    </TableRow>
-
-                                                    <TableRow>
-                                                        <TableCell></TableCell>
-                                                        <TableCell>Raw</TableCell>
-                                                        <TableCell>Adjusted</TableCell>
-                                                        <TableCell>Date</TableCell>
-                                                    </TableRow>
-                                                </TableHead>
-
-                                                <TableBody>
-                                                    <TableRow>
-                                                        <TableCell>Approved</TableCell>
-                                                        <TableCell>100</TableCell>
-                                                        <TableCell>150</TableCell>
-                                                        <TableCell>{props.fmv.approved.raw.timestamp.toLocaleDateString()}</TableCell>
-                                                    </TableRow>
-
-                                                    <TableRow>
-                                                        <TableCell>Pending</TableCell>
-                                                        <TableCell>100</TableCell>
-                                                        <TableCell>160</TableCell>
-                                                        <TableCell>{props.fmv.approved.raw.timestamp.toLocaleDateString()}</TableCell>
-                                                    </TableRow>
-                                                </TableBody>
-                                            </Table>
-                                        </Col>
-
-                                        <Col></Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row> */}
 
                     <Row className="mt-5">
                         <Col>
@@ -175,7 +139,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                                 </Tab>
 
                                 <Tab eventKey="entries" title="Research Entries" onClick={() => setDefaultTab("entries")}>
-                                    <HistoryTable companyName={props.companyName} />
+                                    <ResearchEntriesTable companyName={props.companyName} />
                                 </Tab>
 
                                 <Tab eventKey="price" title="Price History" onClick={() => setDefaultTab("price")}>

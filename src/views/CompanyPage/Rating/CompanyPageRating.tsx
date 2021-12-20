@@ -103,7 +103,7 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
             </Row>
 
             <Row>
-                <Col lg={6}>
+                <Col lg={10}>
                     <Card>
                         <Form>
                             <Table className="companyPage-rating-table text-center">
@@ -113,19 +113,25 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
                                         <td><h6>Fundamentals</h6></td>
                                         <td><h6>FMV</h6></td>
                                         <td><h6>FMV (Adjusted)</h6></td>
+                                        <td><h6>Discount Rate</h6></td>
+                                        <td><h6>Terminal Growth Rate</h6></td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>2</td>
-                                        <td>2</td>
-                                        <td>98</td>
+                                        <td>3</td>
+                                        <td>100</td>
                                         <td>150</td>
+                                        <td>8%</td>
+                                        <td>3%</td>
                                     </tr>
                                     <tr>
                                         <td><Button variant="outline-primary">Approve</Button></td>
-                                        <td></td>
                                         <td><Button variant="outline-primary">Approve</Button></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -134,7 +140,7 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
                     </Card>
                 </Col>
 
-                <Col lg={3} className="text-center">
+                <Col lg={2} className="text-center">
                     <Button variant="outline-primary" className="companyPage-rating-approveAll-button">Approve All</Button>
                 </Col>
 

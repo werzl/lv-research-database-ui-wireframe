@@ -8,7 +8,7 @@ const today = new Date();
 const lastYear = new Date(new Date(today).setFullYear(today.getFullYear() - 1));
 
 
-export const historyData = {
+export const researchEntriesData = {
     columns: [
         {
             field: "sourceId",
