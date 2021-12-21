@@ -13,7 +13,7 @@ export const researchEntriesData: TResearchEntry[] = [
             count: 1,
             list: [
                 {
-                    filename: "test.docx",
+                    filename: "new_model.docx",
                     type: "NonStandard Model",
                     description: ""
                 }
@@ -25,11 +25,21 @@ export const researchEntriesData: TResearchEntry[] = [
         sourceId: "sourceId2",
         date: randomDate(today, lastYear),
         attachments: {
-            count: 1,
+            count: 2,
             list: [
                 {
-                    filename: "test.docx",
+                    filename: "model.xls",
                     type: "NonStandard Model",
+                    description: ""
+                },
+                {
+                    filename: "Abbey National Note.docx",
+                    type: "Note",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, risus non finibus commodo, erat purus finibus risus."
+                },
+                {
+                    filename: "Abbey National ESG.docx",
+                    type: "ESG",
                     description: ""
                 }
             ]
@@ -44,7 +54,7 @@ export const researchEntriesData: TResearchEntry[] = [
             list: [
                 {
                     filename: "test.docx",
-                    type: "NonStandard Model",
+                    type: "Other",
                     description: ""
                 }
             ]
@@ -58,8 +68,8 @@ export const researchEntriesData: TResearchEntry[] = [
             count: 1,
             list: [
                 {
-                    filename: "test.docx",
-                    type: "NonStandard Model",
+                    filename: "research-abbey-national-top-10-p.docx",
+                    type: "Top 10 Percentile",
                     description: ""
                 }
             ]
@@ -73,8 +83,8 @@ export const researchEntriesData: TResearchEntry[] = [
             count: 1,
             list: [
                 {
-                    filename: "test.docx",
-                    type: "NonStandard Model",
+                    filename: "Abbey National ESG.docx",
+                    type: "ESG",
                     description: ""
                 }
             ]
@@ -88,8 +98,8 @@ export const researchEntriesData: TResearchEntry[] = [
             count: 1,
             list: [
                 {
-                    filename: "test.docx",
-                    type: "NonStandard Model",
+                    filename: "research-abbey-national-bottom-10-p.docx",
+                    type: "Bottom 10 Percentile",
                     description: ""
                 }
             ]

@@ -56,12 +56,12 @@ const ResearchEntryRow = (props: TResearchEntry) => {
 
             <TableRow>
                 <TableCell colSpan={6} className="p-0">
-                    <Collapse in={open} timeout="auto" unmountOnExit>
+                    <Collapse in={open} timeout="auto" unmountOnExit className="attachments-collapse">
                         <Row className="m-5 mt-3">
                             <Col>
                                 <h5 className="m-3 text-secondary">Attachments</h5>
 
-                                <Table className="attachments-table w-50">
+                                <Table className="attachments-table w-100">
                                     <TableHead>
                                         <TableRow>
                                             <TableCell>Filename</TableCell>

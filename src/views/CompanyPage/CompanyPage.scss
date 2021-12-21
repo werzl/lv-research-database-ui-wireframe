@@ -161,6 +161,11 @@
         cursor: pointer;
     }
 
+    .attachments-collapse {
+        border-top: 3px solid #00000042;
+        border-bottom: 3px solid #00000042;
+    }
+
     .attachments-table {
         th {
             color: grey;
@@ -168,6 +173,7 @@
 
         td {
             font-size: 0.9rem;
+            padding: 0.75rem;
         }
     }
 }
