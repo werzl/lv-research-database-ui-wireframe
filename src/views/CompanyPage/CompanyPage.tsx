@@ -28,7 +28,7 @@ export interface CompanyPageProps {
 
 const CompanyPage = (props: CompanyPageProps) => {
     const { path } = useRouteMatch();
-    const [defaultTab, setDefaultTab] = useState<"rating" | "entries" | "price" | "timeline">("price");
+    const [defaultTab, setDefaultTab] = useState<"rating" | "entries" | "price" | "timeline">("rating");
 
     return (
         <Switch>
