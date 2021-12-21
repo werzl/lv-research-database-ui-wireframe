@@ -6,11 +6,11 @@ import Navigation from "./components/Navigation/Navigation";
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
 import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
 
-import './App.scss';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { companiesData } from "./views/ResearchDashboard/CompaniesTable/companiesData";
 import CompanyPage from "./views/CompanyPage/CompanyPage";
+
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FMV } from "./types/FMV";
 
