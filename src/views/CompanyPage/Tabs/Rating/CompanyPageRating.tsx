@@ -8,8 +8,8 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import InfoIcon from '@mui/icons-material/Info';
 import { Tooltip } from "@mui/material";
 
-import { FMV } from "../../../types/FMV";
-import RatingCard from "../../../components/rating/RatingCard";
+import { FMV } from "../../../../types/FMV";
+import RatingCard from "../../../../components/rating/RatingCard";
 import { Link } from "react-router-dom";
 
 import Table from '@mui/material/Table';

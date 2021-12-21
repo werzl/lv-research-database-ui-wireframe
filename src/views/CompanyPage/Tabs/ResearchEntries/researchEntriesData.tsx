@@ -1,8 +1,10 @@
 import { Tooltip } from "@mui/material";
 import { GridRenderCellParams, GridValueGetterParams } from "@mui/x-data-grid";
+import { Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
-import { formatDate, randomDate } from "../../../common/dateHelpers";
-import { getCompanyNameFromUrl } from "../../../common/urlHelper";
+import { formatDate, randomDate } from "../../../../common/dateHelpers";
+import { getCompanyNameFromUrl } from "../../../../common/urlHelper";
 
 const today = new Date();
 const lastYear = new Date(new Date(today).setFullYear(today.getFullYear() - 1));
@@ -36,18 +38,38 @@ export const researchEntriesData = {
             width: 100,
             headerClassName: "companyPage-historyTable-attachments",
             cellClassName: "companyPage-historyTable-attachments",
-            sortable: false
+            sortable: false,
+            filterable: false,
+            disableColumnMenu: true
         },
         {
             field: "comments",
             headerName: "Comments",
             width: 500,
             sortable: false,
+            filterable: false,
+            disableColumnMenu: true,
             renderCell: (params: GridRenderCellParams<string>) => {
                 return (
                     <Tooltip title={params.row.comments ?? ""} classes={{ popper: "companyPage-historyTable-comments-tooltip" }} placement="bottom-end">
                         <div className="companyPage-historyTable-comments-cell">{params.row.comments}</div>
                     </Tooltip>
+                )
+            }
+        },
+        {
+            field: "newEntryButton",
+            width: 425,
+            sortable: false,
+            resizable: false,
+            disableColumnMenu: true,
+            filterable: false,
+            headerAlign: "right",
+            renderHeader: (params: any) => {
+                return (
+                    <LinkContainer to={`/${getCompanyNameFromUrl()}/NewResearchEntry`}>
+                        <Button className="companyPage-historyTable-newEntryButton" variant="outline-primary">+</Button>
+                    </LinkContainer>
                 )
             }
         }
@@ -58,7 +80,8 @@ export const researchEntriesData = {
             sourceId: "sourceId1",
             date: today,
             attachments: 1,
-            comments: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, risus non finibus commodo, erat purus finibus risus, sed blandit dolor magna quis dui. Pellentesque eget rutrum urna. Praesent rutrum, sem non sagittis bibendum, tellus nisi aliquet augue, eu blandit ex metus id nisl. Nulla et lobortis mauris. Nam molestie arcu id tellus lobortis euismod. Nunc eget commodo neque. Integer sollicitudin dignissim ante, sed venenatis lectus semper non. Sed at luctus ligula."        },
+            comments: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis, risus non finibus commodo, erat purus finibus risus, sed blandit dolor magna quis dui. Pellentesque eget rutrum urna. Praesent rutrum, sem non sagittis bibendum, tellus nisi aliquet augue, eu blandit ex metus id nisl. Nulla et lobortis mauris. Nam molestie arcu id tellus lobortis euismod. Nunc eget commodo neque. Integer sollicitudin dignissim ante, sed venenatis lectus semper non. Sed at luctus ligula."
+        },
         {
             id: "2",
             sourceId: "sourceId2",

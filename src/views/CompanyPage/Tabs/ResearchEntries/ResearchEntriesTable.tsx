@@ -32,6 +32,7 @@ export default function ResearchEntriesTable(props: HistoryTableProps) {
                 className="dataGrid"
                 rows={rows}
                 columns={data.columns as GridColumns}
+                columnBuffer={data.columns.length ?? 5}
                 hideFooterSelectedRowCount
                 hideFooterPagination
                 disableSelectionOnClick
