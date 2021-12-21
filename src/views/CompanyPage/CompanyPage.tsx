@@ -35,13 +35,13 @@ const CompanyPage = (props: CompanyPageProps) => {
                 <div>new entry</div>
             </Route>
 
-            {researchEntriesData.rows.map(row => {
+            {researchEntriesData.map(row => {
                 return (
-                    <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.id}`}>
+                    <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.sourceId}`}>
                         <ResearchEntry
                             companyName={props.companyName}
                             dateAdded={row.date}
-                            id={row.id}
+                            id={row.sourceId}
                             comments={row.comments ?? ""} />
                     </Route>
                 )
@@ -144,7 +144,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                                 </Tab>
 
                                 <Tab eventKey="entries" title="Research Entries" onClick={() => setDefaultTab("entries")}>
-                                    <ResearchEntriesTable companyName={props.companyName} />
+                                    <ResearchEntriesTable />
                                 </Tab>
 
                                 <Tab eventKey="price" title="Price History" onClick={() => setDefaultTab("price")}>

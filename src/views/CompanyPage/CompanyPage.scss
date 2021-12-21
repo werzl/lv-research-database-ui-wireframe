@@ -99,7 +99,8 @@
 }
 
 // Research Entries
-.companyPage-historyTable-dataGrid {
+//.companyPage-historyTable-dataGrid,
+.companyPage-historyTable-researchEntriesTable-container {
     background-color: white;
     width: 100%;
     height: 60vh;
@@ -108,38 +109,100 @@
     border-radius: 6px;
     margin-bottom: 2rem;
     box-shadow: #00000052 1px 1px 10px 0px;
-}
 
-.companyPage-historyTable-attachments {
-    text-align: center !important;
-}
+    table {
+        table-layout: fixed;
+    }
 
-.companyPage-historyTable-comments-cell {
-    text-align: justify;
-    text-overflow: ellipsis;
-    width: 100%;
-    cursor: pointer;
-    overflow: hidden;
-}
+    thead {
+        th {
+            font-size: 1rem;
+            font-weight: bolder !important;
+        }
 
-.companyPage-historyTable-comments-tooltip {
-    border-radius: 8px;
+        .collapse-icon-header {
+            width: 5%;
+        }
 
-    div {
-        background-color: #f8f9fa;
-        color: black;
-        box-shadow: black 0px 1px 11px 0px;
-        font-size: 1rem;
+        .sourceId-header {
+            width: 8%;
+        }
+
+        .date-header {
+            width: 12%;
+        }
+
+        .attachments-header {
+            width: 10%;
+        }
+
+        .comments-header {
+            width: 50%;
+        }
+
+        .newEntry-header {
+            text-align: right;
+            width: 15%;
+        }
+
+        .newEntryButton {
+            border: none;
+            font-size: 1.75rem;
+            padding: 0.375rem;
+        }
+    }
+
+    .comments {
+        margin-top: 0.75rem;
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .attachments-table {
+        th {
+            color: grey;
+        }
+
+        td {
+            font-size: 0.9rem;
+        }
     }
 }
 
-.companyPage-historyTable-newEntryButton {
-    border: none;
-    font-size: 1.5rem;
-}
+// .companyPage-historyTable-attachments {
+//     text-align: center !important;
+// }
+
+// .companyPage-historyTable-comments-cell {
+//     text-align: justify;
+//     text-overflow: ellipsis;
+//     width: 100%;
+//     cursor: pointer;
+//     overflow: hidden;
+// }
+
+// .companyPage-historyTable-comments-tooltip {
+//     border-radius: 8px;
+
+//     div {
+//         background-color: #f8f9fa;
+//         color: black;
+//         box-shadow: black 0px 1px 11px 0px;
+//         font-size: 1rem;
+//     }
+// }
+
+// .companyPage-historyTable-newEntryButton {
+//     border: none;
+//     font-size: 1.5rem;
+// }
 
 // Price History
-.companyPage-priceHistory-quality-graph, .companyPage-priceHistory-fundamentals-graph {
+.companyPage-priceHistory-quality-graph,
+.companyPage-priceHistory-fundamentals-graph {
     canvas {
         height: 150px !important;
         width: 100% !important;
