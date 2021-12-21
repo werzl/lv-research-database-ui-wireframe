@@ -168,7 +168,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                                             <Row className="mt-4">
                                                 <Col>
                                                     <Card>
-                                                        <Card.Body>
+                                                        <Card.Body className="companyPage-priceHistory-fundamentals-graph">
                                                             <FundamentalsGraph />
                                                         </Card.Body>
                                                     </Card>

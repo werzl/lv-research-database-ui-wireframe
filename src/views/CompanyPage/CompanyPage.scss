@@ -134,7 +134,7 @@
 }
 
 // Price History
-.companyPage-priceHistory-quality-graph {
+.companyPage-priceHistory-quality-graph, .companyPage-priceHistory-fundamentals-graph {
     canvas {
         height: 150px !important;
         width: 100% !important;
