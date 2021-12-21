@@ -46,7 +46,7 @@ const fakeFMV: FMV = {
 };
 
 function App() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<any>("not null");
   const companies: any = companiesData;
 
   const signIn = () => {
@@ -99,19 +99,6 @@ function App() {
                       </Route>
                     )
                   })}
-
-                  {/* TODO: Remove */}
-                  {/* <Route path="/AbbeyNationalPLC">
-                    <CompanyPage
-                      companyName="Abbey National PLC"
-                      ticker="ANL LN"
-                      price={8}
-                      currency="EUR"
-                      fmv={15}
-                      dr={8}
-                      tg={4.5}
-                      upside={30.25}/>
-                  </Route> */}
                 </>
               }
 
