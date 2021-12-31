@@ -112,6 +112,10 @@
 
     table {
         table-layout: fixed;
+
+        td {
+            border-bottom: none;
+        }
     }
 
     thead {
@@ -162,7 +166,6 @@
     }
 
     .attachments-collapse {
-        border-top: 3px solid #00000042;
         border-bottom: 3px solid #00000042;
     }
 
@@ -190,16 +193,16 @@
 //     overflow: hidden;
 // }
 
-// .companyPage-historyTable-comments-tooltip {
-//     border-radius: 8px;
+.companyPage-historyTable-comments-tooltip {
+    border-radius: 8px;
 
-//     div {
-//         background-color: #f8f9fa;
-//         color: black;
-//         box-shadow: black 0px 1px 11px 0px;
-//         font-size: 1rem;
-//     }
-// }
+    div {
+        background-color: #f8f9fa;
+        color: black;
+        box-shadow: black 0px 1px 11px 0px;
+        font-size: 1rem;
+    }
+}
 
 // .companyPage-historyTable-newEntryButton {
 //     border: none;

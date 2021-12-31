@@ -25,7 +25,7 @@ export const researchEntriesData: TResearchEntry[] = [
         sourceId: "sourceId2",
         date: randomDate(today, lastYear),
         attachments: {
-            count: 2,
+            count: 3,
             list: [
                 {
                     filename: "model.xls",
