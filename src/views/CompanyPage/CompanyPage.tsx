@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Tabs, Tab, Breadcrumb, Card } from "react-bootstrap";
+import { Col, Container, Row, Tabs, Tab, Breadcrumb } from "react-bootstrap";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import { FMV } from "../../types/FMV";
 import "./CompanyPage.scss";

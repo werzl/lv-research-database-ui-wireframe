@@ -1,6 +1,10 @@
 import React from "react";
 import { Col, Container, Row, Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export interface NewResearchEntryProps {
     companyName: string,
@@ -38,6 +42,44 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
             <Row className="mt-3">
                 <Col className="text-center">
                     <h1>{props.companyName}</h1>
+                </Col>
+            </Row>
+
+            <Row className="mt-5">
+                <Col>
+                    <div className="">
+                        <Row>
+                            <Col>
+                                <Accordion defaultExpanded>
+                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                        <h4>Attachments</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>Upload a file... </AccordionDetails>
+                                </Accordion>
+
+                                <Accordion defaultExpanded>
+                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                        <h4>Company Details</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>Test </AccordionDetails>
+                                </Accordion>
+
+                                <Accordion defaultExpanded>
+                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                        <h4>Quality and Fundamentals</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>Test </AccordionDetails>
+                                </Accordion>
+
+                                <Accordion defaultExpanded>
+                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                        <h4>FMV</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>Test </AccordionDetails>
+                                </Accordion>
+                            </Col>
+                        </Row>
+                    </div>
                 </Col>
             </Row>
         </Container>
