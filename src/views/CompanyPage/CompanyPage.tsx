@@ -143,7 +143,7 @@ const CompanyPage = (props: CompanyPageProps) => {
                                 className="mb-3">
 
                                 <Tab eventKey="rating" title="Rating" onClick={() => setDefaultTab("rating")}>
-                                    <CompanyPageRating fmv={props.fmv} researchEntryLink={`/${props.companyName.replaceAll(" ", "")}/1`} />
+                                    <CompanyPageRating fmv={props.fmv} researchEntryLink={`/${props.companyName.replaceAll(" ", "")}/sourceid1`} />
                                 </Tab>
 
                                 <Tab eventKey="entries" title="Research Entries" onClick={() => setDefaultTab("entries")}>
