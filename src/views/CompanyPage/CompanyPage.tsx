@@ -88,49 +88,75 @@ const CompanyPage = (props: CompanyPageProps) => {
 
                     <Row className="mt-3">
                         <Col>
-                            <Card className="companyPage-companyStats">
-                                <Card.Body className="p-1">
-                                    <Row className="w-100">
-                                        <Col>
-                                            <Table>
-                                                <TableHead>
-                                                    <TableRow>
-                                                        <TableCell>Ticker</TableCell>
-                                                        <TableCell>Primary Analyst</TableCell>
-                                                        <TableCell>Price</TableCell>
-                                                        <TableCell>Currency</TableCell>
-                                                        <TableCell>Quality</TableCell>
-                                                        <TableCell>Fundamentals</TableCell>
-                                                        <TableCell>FMV</TableCell>
-                                                        <TableCell>FMV (Adjusted)</TableCell>
-                                                        <TableCell>Forward P/E at Current Price</TableCell>
-                                                        <TableCell>Forward P/E at FMV</TableCell>
-                                                        <TableCell>Forward P/E at Adjusted FMV</TableCell>
-                                                        <TableCell>Upside to Adjusted FMV</TableCell>
-                                                    </TableRow>
-                                                </TableHead>
+                            <div className="companyPage-companyStats">
+                                <Row className="w-100">
+                                    <Col lg={3} className="companyStat">
+                                        <Table>
+                                            <TableHead>
+                                                <TableRow>
+                                                    <TableCell>Ticker</TableCell>
+                                                    <TableCell>Primary Analyst</TableCell>
+                                                    <TableCell>Price</TableCell>
+                                                    <TableCell>Currency</TableCell>
+                                                </TableRow>
+                                            </TableHead>
 
-                                                <TableBody>
-                                                    <TableRow>
-                                                        <TableCell>{props.ticker}</TableCell>
-                                                        <TableCell>{props.primaryAnalyst}</TableCell>
-                                                        <TableCell>30</TableCell>
-                                                        <TableCell>EUR</TableCell>
-                                                        <TableCell>1</TableCell>
-                                                        <TableCell>2</TableCell>
-                                                        <TableCell>100</TableCell>
-                                                        <TableCell>150</TableCell>
-                                                        <TableCell>25.64</TableCell>
-                                                        <TableCell>50.3</TableCell>
-                                                        <TableCell>55.2</TableCell>
-                                                        <TableCell>35%</TableCell>
-                                                    </TableRow>
-                                                </TableBody>
-                                            </Table>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
+                                            <TableBody>
+                                                <TableRow>
+                                                    <TableCell>{props.ticker}</TableCell>
+                                                    <TableCell>{props.primaryAnalyst}</TableCell>
+                                                    <TableCell>30</TableCell>
+                                                    <TableCell>EUR</TableCell>
+                                                </TableRow>
+                                            </TableBody>
+                                        </Table>
+                                    </Col>
+
+                                    <Col lg={3} className="companyStat">
+                                        <Table>
+                                            <TableHead>
+                                                <TableRow>
+                                                    <TableCell>Quality</TableCell>
+                                                    <TableCell>Fundamentals</TableCell>
+                                                    <TableCell>FMV</TableCell>
+                                                    <TableCell>FMV (Adjusted)</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+
+                                            <TableBody>
+                                                <TableRow>
+                                                    <TableCell>1</TableCell>
+                                                    <TableCell>2</TableCell>
+                                                    <TableCell>100</TableCell>
+                                                    <TableCell>150</TableCell>
+                                                </TableRow>
+                                            </TableBody>
+                                        </Table>
+                                    </Col>
+
+                                    <Col className="companyStat">
+                                        <Table>
+                                            <TableHead>
+                                                <TableRow>
+                                                    <TableCell>Forward P/E at Current Price</TableCell>
+                                                    <TableCell>Forward P/E at FMV</TableCell>
+                                                    <TableCell>Forward P/E at Adjusted FMV</TableCell>
+                                                    <TableCell>Upside to Adjusted FMV</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+
+                                            <TableBody>
+                                                <TableRow>
+                                                    <TableCell>25.64</TableCell>
+                                                    <TableCell>50.3</TableCell>
+                                                    <TableCell>55.2</TableCell>
+                                                    <TableCell>35%</TableCell>
+                                                </TableRow>
+                                            </TableBody>
+                                        </Table>
+                                    </Col>
+                                </Row>
+                            </div>
                         </Col>
                     </Row>
 
