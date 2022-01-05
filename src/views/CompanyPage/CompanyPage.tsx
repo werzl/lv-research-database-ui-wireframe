@@ -15,6 +15,7 @@ import { researchEntriesData } from "./Tabs/ResearchEntries/researchEntriesData"
 import PriceHistory from "./Tabs/PriceHistory/PriceHistory";
 
 import ResearchEntry from "./ResearchEntry/ResearchEntry";
+import NewResearchEntry from "./NewResearchEntry/NewResearchEntry";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -32,7 +33,9 @@ const CompanyPage = (props: CompanyPageProps) => {
     return (
         <Switch>
             <Route path={`/${props.companyName.replaceAll(" ", "")}/NewResearchEntry`}>
-                <div>new entry</div>
+                <NewResearchEntry
+                    companyName={props.companyName}
+                    dateAdded={new Date()} />
             </Route>
 
             {researchEntriesData.map(row => {
