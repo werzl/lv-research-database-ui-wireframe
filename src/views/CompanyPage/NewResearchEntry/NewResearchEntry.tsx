@@ -29,7 +29,7 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                         </Breadcrumb.Item>
 
                         <Breadcrumb.Item active>
-                            {props.dateAdded.toLocaleDateString()}
+                            New Research Entry
                         </Breadcrumb.Item>
                     </Breadcrumb>
                 </Col>
