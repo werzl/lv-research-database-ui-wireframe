@@ -8,7 +8,7 @@
     overflow-x: auto;
 
     .companyStat {
-        margin: 0 1rem; 
+        margin: 0 1rem;
     }
 
     th {
@@ -172,30 +172,17 @@
     .attachments-collapse {
         border-bottom: 3px solid #00000042;
     }
+}
+.attachments-table {
+    th {
+        color: grey;
+    }
 
-    .attachments-table {
-        th {
-            color: grey;
-        }
-
-        td {
-            font-size: 0.9rem;
-            padding: 0.75rem;
-        }
+    td {
+        font-size: 0.9rem;
+        padding: 0.75rem;
     }
 }
-
-// .companyPage-historyTable-attachments {
-//     text-align: center !important;
-// }
-
-// .companyPage-historyTable-comments-cell {
-//     text-align: justify;
-//     text-overflow: ellipsis;
-//     width: 100%;
-//     cursor: pointer;
-//     overflow: hidden;
-// }
 
 .companyPage-historyTable-comments-tooltip {
     border-radius: 8px;
@@ -208,11 +195,6 @@
     }
 }
 
-// .companyPage-historyTable-newEntryButton {
-//     border: none;
-//     font-size: 1.5rem;
-// }
-
 // Price History
 .companyPage-priceHistory-quality-graph,
 .companyPage-priceHistory-fundamentals-graph {
@@ -221,3 +203,60 @@
         width: 100% !important;
     }
 }
+
+// Research Entry
+.companyPage-researchEntry-AttachmentDropZone-container {
+    padding: 2rem;
+}
+
+.companyPage-researchEntry-AttachmentDropZone-card {
+    width: 35%;
+    margin-left: 35%;
+
+    .companyPage-researchEntry-AttachmentDropZone-cardHeader {
+        height: 8rem;
+        background-color: #56aaff;
+
+        h2 {
+            margin-top: 2rem;
+            color: white;
+
+            svg {
+                height: 4rem;
+                width: auto;
+                padding-right: 2rem;
+            }
+        }
+    }
+
+    .companyPage-researchEntry-AttachmentDropZone-cardBody {
+        padding: 7rem 0;
+        cursor: pointer;
+
+        &:hover {
+            background: #dbdbdb2e;
+        }
+
+    }
+}
+
+// .companyPage-researchEntry-AttachmentDropZone-container {
+//     padding: 2rem;
+// }
+
+// .companyPage-researchEntry-AttachmentDropZone-root {
+//     width: 50%;
+//     height: 12rem;
+//     margin-left: 25%;
+//     border: 4px dashed #76baff;
+//     border-radius: 2rem;
+//     cursor: pointer;
+
+//     &:hover {
+//         border: 4px dashed #3b96f2;
+//     }
+// }
+
+// .companyPage-researchEntry-AttachmentDropZone-inner {
+//     margin: 5rem 0;
+// }

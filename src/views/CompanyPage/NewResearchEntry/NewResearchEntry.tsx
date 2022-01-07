@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+import AttachmentDropZone from "./Attachments/AttachmentDropZone";
+import UploadedAttachments, { NewAttachment } from "./Attachments/UploadedAttachments";
 
 export interface NewResearchEntryProps {
     companyName: string,
@@ -15,6 +18,22 @@ export interface NewResearchEntryProps {
 }
 
 const NewResearchEntry = (props: NewResearchEntryProps) => {
+    const [attachments, setAttachments] = useState<NewAttachment[]>([]);
+
+    const upload = (files: any) => {
+        console.info(files);
+
+        setAttachments(
+            files.map((f: any) => {
+                return { filename: f.name };
+            })
+        );
+    };
+
+    const onDeleteAttachment = (attachment: string) => {
+        setAttachments(attachments.filter(a => a.filename !== attachment));
+    };
+
     return (
         <Container className="mt-5">
             <Row>
@@ -51,28 +70,36 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                         <Row>
                             <Col>
                                 <Accordion defaultExpanded>
-                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
                                         <h4>Attachments</h4>
                                     </AccordionSummary>
-                                    <AccordionDetails>Upload a file... </AccordionDetails>
+                                    <AccordionDetails>
+                                        <Row>
+                                            <Col className="text-center">
+                                                <AttachmentDropZone upload={upload} />
+                                            </Col>
+                                        </Row>
+
+                                        <UploadedAttachments attachments={attachments} onDeleteAttachment={onDeleteAttachment} />
+                                    </AccordionDetails>
                                 </Accordion>
 
                                 <Accordion defaultExpanded>
-                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
                                         <h4>Company Details</h4>
                                     </AccordionSummary>
                                     <AccordionDetails>Test </AccordionDetails>
                                 </Accordion>
 
                                 <Accordion defaultExpanded>
-                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
                                         <h4>Quality and Fundamentals</h4>
                                     </AccordionSummary>
                                     <AccordionDetails>Test </AccordionDetails>
                                 </Accordion>
 
                                 <Accordion defaultExpanded>
-                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
                                         <h4>FMV</h4>
                                     </AccordionSummary>
                                     <AccordionDetails>Test </AccordionDetails>
