@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Navigation from "./components/Navigation/Navigation";
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
@@ -59,6 +61,8 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
+
       <Router>
         {user !== null &&
           <Row>
