@@ -242,27 +242,42 @@
         &:hover {
             background: #dbdbdb2e;
         }
-
     }
 }
 
-// .companyPage-researchEntry-AttachmentDropZone-container {
-//     padding: 2rem;
-// }
+// New Research Entry
+.float {
+    z-index: 999;
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    top: 8rem;
+    right: 7rem;
+    background-color: #56aaff;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    cursor: pointer;
 
-// .companyPage-researchEntry-AttachmentDropZone-root {
-//     width: 50%;
-//     height: 12rem;
-//     margin-left: 25%;
-//     border: 4px dashed #76baff;
-//     border-radius: 2rem;
-//     cursor: pointer;
+    .float-button {
+        margin-top: 10px;
+        border: none;
+        background: none;
+        color: white;
 
-//     &:hover {
-//         border: 4px dashed #3b96f2;
-//     }
-// }
+        svg {
+            width: auto;
+            height: 4rem;
+        }
+    }
+}
 
-// .companyPage-researchEntry-AttachmentDropZone-inner {
-//     margin: 5rem 0;
-// }
+.float:hover {
+    width: 80px;
+    height: 80px;
+
+    .float-button {
+        margin-top: 16px;
+    }
+}
