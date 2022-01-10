@@ -61,8 +61,8 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
                     :
 
                     <TableRow>
-                        <TableCell className="text-center text-secondary" colSpan={3}>
-                            Attachments will appear here.
+                        <TableCell className="text-center text-secondary py-4" colSpan={3}>
+                            <h5>Attachments will appear here.</h5>
                         </TableCell>
                     </TableRow>
                 }

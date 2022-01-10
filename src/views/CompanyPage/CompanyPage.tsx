@@ -36,6 +36,10 @@ const CompanyPage = (props: CompanyPageProps) => {
             <Route path={`/${props.companyName.replaceAll(" ", "")}/NewResearchEntry`}>
                 <NewResearchEntry
                     companyName={props.companyName}
+                    ticker={props.ticker}
+                    primaryAnalyst={props.primaryAnalyst}
+                    price={props.price}
+                    currency={props.currency}
                     dateAdded={new Date()} />
             </Route>
 

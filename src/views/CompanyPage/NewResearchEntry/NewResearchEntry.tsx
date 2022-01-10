@@ -13,14 +13,14 @@ import UploadedAttachments, { NewAttachment } from "./Attachments/UploadedAttach
 
 export interface NewResearchEntryProps {
     companyName: string,
-    dateAdded: Date,
-    // quality: 0 | 1 | 2 | 3,
-    // fundamentals: 0 | 1 | 2 | 3,
-    // fmv: number
+    ticker: string,
+    primaryAnalyst: string,
+    price: number,
+    currency: string,
+    dateAdded: Date
 }
 
 const NewResearchEntry = (props: NewResearchEntryProps) => {
-    const [uploadInProgress, setUploadInProgres] = useState<boolean>(false);
     const [attachments, setAttachments] = useState<NewAttachment[]>([]);
 
     const upload = (files: any) => {
@@ -100,7 +100,6 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
 
                 <Row className="mt-5">
                     <Col>
-                        <div className="">
                             <Row>
                                 <Col>
                                     <Accordion defaultExpanded>
@@ -114,7 +113,7 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                                                 </Col>
                                             </Row>
 
-                                            <Row>
+                                            <Row className="mt-3">
                                                 <Col lg={1}></Col>
                                                 <Col lg={10}>
                                                     <UploadedAttachments attachments={attachments} onDeleteAttachment={onDeleteAttachment} />
@@ -145,7 +144,6 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                                     </Accordion>
                                 </Col>
                             </Row>
-                        </div>
                     </Col>
                 </Row>
             </Form>
