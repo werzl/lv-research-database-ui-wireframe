@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Breadcrumb, Button, Form } from "react-bootstrap";
+import { Col, Container, Row, Breadcrumb, Form } from "react-bootstrap";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -30,9 +30,12 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
             // throw new Error("upload failed");
 
             setAttachments(
-                files.map((f: any) => {
-                    return { filename: f.name };
-                })
+                [
+                    ...attachments,
+                    ...files.map((f: any) => {
+                        return { filename: f.name };
+                    })
+                ]
             );
         }
         catch (e) {
