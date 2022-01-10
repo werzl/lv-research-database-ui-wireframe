@@ -188,6 +188,11 @@
         font-size: 0.9rem;
         padding: 0.75rem;
     }
+
+    .filename {
+        width: 25%;
+        overflow-x: auto;
+    }
 }
 
 .companyPage-historyTable-comments-tooltip {

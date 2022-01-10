@@ -33,7 +33,7 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
             <TableBody>
                 {props.attachments.length ? props.attachments.map(attachment => (
                     <TableRow key={Math.random().toString()}>
-                        <TableCell className="align-top">
+                        <TableCell className="align-top filename">
                             {attachment.filename}<br />
                             <ProgressBar />
                         </TableCell>

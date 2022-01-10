@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { Card } from "react-bootstrap";
 import { useDropzone } from "react-dropzone";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import DocumentScannerOutlinedIcon from '@mui/icons-material/DocumentScannerOutlined';
 
 export interface AttachmentDropZoneProps {
     upload: (files: any) => void
