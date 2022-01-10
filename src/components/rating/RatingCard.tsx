@@ -1,11 +1,13 @@
 import React from "react";
 
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Form, Row } from "react-bootstrap";
 
 export interface RatingCardProps {
     heading: string,
     value: string | number,
-    icon: any
+    icon: any,
+    editable?: boolean,
+    required?: boolean,
 }
 
 const RatingCard = (props: RatingCardProps) => {
@@ -19,9 +21,24 @@ const RatingCard = (props: RatingCardProps) => {
                         </Col>
                     </Row>
 
-                    <Row className="text-center">
-                        <Col><h2>{props.value}</h2></Col>
-                    </Row>
+                    {props.editable ?
+                        <Row className="text-center">
+                            <Col><h2>{props.value}</h2></Col>
+                        </Row>
+
+                        :
+
+                        <Row>
+                            <Col>
+                                <Form.Select className="mt-0" required={props.required} defaultValue={props.value}>
+                                    <option value={0}>0</option>
+                                    <option value={1}>1</option>
+                                    <option value={2}>2</option>
+                                    <option value={3}>3</option>
+                                </Form.Select>
+                            </Col>
+                        </Row>
+                    }
                 </Col>
 
                 <Col>

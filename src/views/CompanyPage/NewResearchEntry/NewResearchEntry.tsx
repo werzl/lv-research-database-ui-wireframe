@@ -7,9 +7,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { toast } from 'react-toastify';
 import { LinkContainer } from "react-router-bootstrap";
 import SaveAsIcon from '@mui/icons-material/SaveAs';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import { Check } from "@mui/icons-material";
 
 import AttachmentDropZone from "./Attachments/AttachmentDropZone";
 import UploadedAttachments, { NewAttachment } from "./Attachments/UploadedAttachments";
+import RatingCard from "../../../components/rating/RatingCard";
 
 export interface NewResearchEntryProps {
     companyName: string,
@@ -105,54 +108,66 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
 
                 <Row className="mt-5">
                     <Col>
-                            <Row>
-                                <Col>
-                                    <Accordion defaultExpanded>
-                                        <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                            <h4>Attachments</h4>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <Row>
-                                                <Col className="text-center">
-                                                    <AttachmentDropZone upload={upload} />
-                                                </Col>
-                                            </Row>
+                        <Row>
+                            <Col>
+                                {/* Quality and Fundamentals */}
+                                <Row className="mb-3">
+                                    <Col lg={3}></Col>
 
-                                            <Row className="mt-3">
-                                                <Col lg={1}></Col>
-                                                <Col lg={10}>
-                                                    <UploadedAttachments attachments={attachments} onDeleteAttachment={onDeleteAttachment} />
-                                                </Col>
-                                            </Row>
-                                        </AccordionDetails>
-                                    </Accordion>
+                                    <Col lg={3}>
+                                        <RatingCard heading="Quality" value={props.quality} icon={<Check className="companyPage-rating-card-check" />} />
+                                    </Col>
 
-                                    <Accordion defaultExpanded>
-                                        <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                            <h4>Quality and Fundamentals</h4>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            Q F
-                                        </AccordionDetails>
-                                    </Accordion>
+                                    <Col lg={3}>
+                                        <RatingCard heading="Fundamentals" value={props.fundamentals} icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
+                                    </Col>
+                                </Row>
 
-                                    <Accordion defaultExpanded>
-                                        <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                            <h4>FMV</h4>
-                                        </AccordionSummary>
-                                        <AccordionDetails>Test </AccordionDetails>
-                                    </Accordion>
+                                {/* Attachments */}
+                                <Accordion defaultExpanded>
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
+                                        <h4>Attachments</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Row>
+                                            <Col className="text-center">
+                                                <AttachmentDropZone upload={upload} />
+                                            </Col>
+                                        </Row>
 
-                                    <Accordion defaultExpanded className="mb-5">
-                                        <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                            <h4>Comments</h4>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <Form.Control as="textarea" rows={10} placeholder="(Optional) add your comments here..." />
-                                        </AccordionDetails>
-                                    </Accordion>
-                                </Col>
-                            </Row>
+                                        <Row className="mt-3">
+                                            <Col lg={1}></Col>
+                                            <Col lg={10}>
+                                                <UploadedAttachments attachments={attachments} onDeleteAttachment={onDeleteAttachment} />
+                                            </Col>
+                                        </Row>
+                                    </AccordionDetails>
+                                </Accordion>
+
+
+
+
+
+                                {/* FMV */}
+                                <Accordion defaultExpanded>
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
+                                        <h4>FMV</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>Test </AccordionDetails>
+                                </Accordion>
+
+
+                                {/* Comments */}
+                                <Accordion defaultExpanded className="mb-5">
+                                    <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
+                                        <h4>Comments</h4>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Form.Control as="textarea" rows={10} placeholder="(Optional) add your comments here..." />
+                                    </AccordionDetails>
+                                </Accordion>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Form>
