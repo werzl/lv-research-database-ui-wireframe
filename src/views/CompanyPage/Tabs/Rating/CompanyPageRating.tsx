@@ -53,10 +53,10 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
                 </Col>
 
                 <Col lg={3}>
-                    <p>
                     <Tooltip title="Most recently approved ratings." classes={{ popper: "companyPage-rating-info-tooltip" }} placement="top">
                         <div style={{ cursor: "pointer", width: "10%" }}><InfoIcon /></div>
                     </Tooltip>
+                    <p>
                         This information is from the most recently approved research entry. FMV was updated on {props.fmv.approved.raw.timestamp.toLocaleDateString()}.
                         <br /><br />
                         You can view the most recently approved research entry <Link to={props.researchEntryLink}>here</Link>.
