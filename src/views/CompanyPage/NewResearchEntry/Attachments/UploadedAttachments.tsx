@@ -4,8 +4,8 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 import ProgressBar from "../../../../common/ProgressBar";
 
@@ -26,17 +26,18 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
                     <TableCell>Filename</TableCell>
                     <TableCell>Type</TableCell>
                     <TableCell>Description</TableCell>
+                    <TableCell></TableCell>
                 </TableRow>
             </TableHead>
 
             <TableBody>
                 {props.attachments.length ? props.attachments.map(attachment => (
-                    <TableRow key={attachment.filename}>
-                        <TableCell>
+                    <TableRow key={Math.random().toString()}>
+                        <TableCell className="align-top">
                             {attachment.filename}<br />
                             <ProgressBar />
                         </TableCell>
-                        <TableCell className="w-25">
+                        <TableCell className="w-25 align-top">
                             <Form.Select className="mt-0" required>
                                 <option value="">Please select...</option>
                                 <option>Above Average</option>
@@ -52,8 +53,12 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
                             </Form.Select>
                         </TableCell>
 
-                        <TableCell>
+                        <TableCell className="align-top">
                             <Form.Control style={{resize: "none"}} as="textarea" rows={5} placeholder="(Optional) write a short description..." />
+                        </TableCell>
+
+                        <TableCell className="companyPage-newReserachEntry-uploadedAttachments-delete-icon-cell">
+                            <Button variant="outline-danger" onClick={() => props.onDeleteAttachment(attachment.filename)}><DeleteForeverIcon /></Button>
                         </TableCell>
                     </TableRow>
                 ))
@@ -61,7 +66,7 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
                     :
 
                     <TableRow>
-                        <TableCell className="text-center text-secondary py-4" colSpan={3}>
+                        <TableCell className="text-center text-secondary py-4" colSpan={4}>
                             <h5>Attachments will appear here.</h5>
                         </TableCell>
                     </TableRow>
