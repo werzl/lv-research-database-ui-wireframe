@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Tabs, Tab, Breadcrumb } from "react-bootstrap";
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { FMV } from "../../types/FMV";
 import "./CompanyPage.scss";
 import Table from '@mui/material/Table';
@@ -16,6 +16,7 @@ import PriceHistory from "./Tabs/PriceHistory/PriceHistory";
 
 import ResearchEntry from "./ResearchEntry/ResearchEntry";
 import NewResearchEntry from "./NewResearchEntry/NewResearchEntry";
+import { LinkContainer } from "react-router-bootstrap";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -40,7 +41,7 @@ const CompanyPage = (props: CompanyPageProps) => {
 
             {researchEntriesData.map(row => {
                 return (
-                    <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.sourceId}`}>
+                    <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.sourceId}`} key={row.sourceId}>
                         <ResearchEntry
                             companyName={props.companyName}
                             dateAdded={row.date}
@@ -56,9 +57,9 @@ const CompanyPage = (props: CompanyPageProps) => {
                         <Col>
                             <Breadcrumb>
                                 <Breadcrumb.Item>
-                                    <Link to="/">
-                                        Securities
-                                    </Link>
+                                    <LinkContainer to="/">
+                                        <p className="companyPage-breadcrumb-link">Securities</p>
+                                    </LinkContainer>
                                 </Breadcrumb.Item>
 
                                 <Breadcrumb.Item active>
