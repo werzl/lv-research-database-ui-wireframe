@@ -162,9 +162,11 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                                 {/* FMV */}
                                 <Accordion defaultExpanded>
                                     <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                        <FmvForm />
+                                        <h4>FMV</h4>
                                     </AccordionSummary>
-                                    <AccordionDetails>Test </AccordionDetails>
+                                    <AccordionDetails>
+                                        <FmvForm />
+                                    </AccordionDetails>
                                 </Accordion>
 
 
