@@ -30,14 +30,15 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
             </TableHead>
 
             <TableBody>
-                {props.attachments ? props.attachments.map(attachment => (
+                {props.attachments.length ? props.attachments.map(attachment => (
                     <TableRow key={attachment.filename}>
                         <TableCell>
                             {attachment.filename}<br />
                             <ProgressBar />
                         </TableCell>
                         <TableCell className="w-25">
-                            <Form.Select className="mt-3">
+                            <Form.Select className="mt-0" required>
+                                <option value="">Please select...</option>
                                 <option>Above Average</option>
                                 <option>Below Average</option>
                                 <option>Top 10</option>
@@ -52,7 +53,7 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
                         </TableCell>
 
                         <TableCell>
-                            <Form.Control className="" as="textarea" rows={4} placeholder="Write a short description..."/>
+                            <Form.Control style={{resize: "none"}} as="textarea" rows={5} placeholder="(Optional) write a short description..." />
                         </TableCell>
                     </TableRow>
                 ))
@@ -60,8 +61,8 @@ const UploadedAttachments = (props: UploadedAttachmentsProps) => {
                     :
 
                     <TableRow>
-                        <TableCell colSpan={3}>
-                            Uploaded attachments will appear here.
+                        <TableCell className="text-center text-secondary" colSpan={3}>
+                            Attachments will appear here.
                         </TableCell>
                     </TableRow>
                 }
