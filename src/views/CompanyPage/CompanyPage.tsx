@@ -40,7 +40,9 @@ const CompanyPage = (props: CompanyPageProps) => {
                     primaryAnalyst={props.primaryAnalyst}
                     price={props.price}
                     currency={props.currency}
-                    dateAdded={new Date()} />
+                    dateAdded={new Date()}
+                    quality={1}
+                    fundamentals={2}/>
             </Route>
 
             {researchEntriesData.map(row => {

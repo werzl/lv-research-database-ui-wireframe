@@ -17,7 +17,9 @@ export interface NewResearchEntryProps {
     primaryAnalyst: string,
     price: number,
     currency: string,
-    dateAdded: Date
+    dateAdded: Date,
+    quality: 0 | 1 | 2 | 3,
+    fundamentals: 0 | 1 | 2 | 3
 }
 
 const NewResearchEntry = (props: NewResearchEntryProps) => {
