@@ -13,6 +13,7 @@ import { Check } from "@mui/icons-material";
 import AttachmentDropZone from "./Attachments/AttachmentDropZone";
 import UploadedAttachments, { NewAttachment } from "./Attachments/UploadedAttachments";
 import RatingCard from "../../../components/rating/RatingCard";
+import FmvForm from "./FMV/FmvForm";
 
 export interface NewResearchEntryProps {
     companyName: string,
@@ -115,13 +116,25 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                                     <Col lg={3}></Col>
 
                                     <Col lg={3}>
-                                        <RatingCard heading="Quality" value={props.quality} icon={<Check className="companyPage-rating-card-check" />} />
+                                        <RatingCard
+                                            heading="Quality"
+                                            value={props.quality}
+                                            icon={<Check className="companyPage-rating-card-check" />}
+                                            editable
+                                            required />
                                     </Col>
 
                                     <Col lg={3}>
-                                        <RatingCard heading="Fundamentals" value={props.fundamentals} icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
+                                        <RatingCard
+                                            heading="Fundamentals"
+                                            value={props.fundamentals}
+                                            icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />}
+                                            editable
+                                            required />
                                     </Col>
                                 </Row>
+
+
 
                                 {/* Attachments */}
                                 <Accordion defaultExpanded>
@@ -146,15 +159,14 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
 
 
 
-
-
                                 {/* FMV */}
                                 <Accordion defaultExpanded>
                                     <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                        <h4>FMV</h4>
+                                        <FmvForm />
                                     </AccordionSummary>
                                     <AccordionDetails>Test </AccordionDetails>
                                 </Accordion>
+
 
 
                                 {/* Comments */}

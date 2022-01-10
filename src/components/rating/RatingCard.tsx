@@ -21,7 +21,7 @@ const RatingCard = (props: RatingCardProps) => {
                         </Col>
                     </Row>
 
-                    {props.editable ?
+                    {!props.editable ?
                         <Row className="text-center">
                             <Col><h2>{props.value}</h2></Col>
                         </Row>
