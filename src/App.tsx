@@ -87,7 +87,7 @@ function App() {
 
                   {companies.rows.map((row: any) => {
                     return (
-                      <Route path={`/${row.security.replaceAll(" ", "")}`}>
+                      <Route path={`/${row.security.replaceAll(" ", "")}`} key={row.id}>
                         <CompanyPage
                           key={row.id}
                           companyName={row.security}
