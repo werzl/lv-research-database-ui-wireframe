@@ -140,6 +140,15 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                                         </AccordionSummary>
                                         <AccordionDetails>Test </AccordionDetails>
                                     </Accordion>
+
+                                    <Accordion defaultExpanded className="mb-5">
+                                        <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
+                                            <h4>Comments</h4>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Form.Control as="textarea" rows={10} placeholder="(Optional) add your comments here..." />
+                                        </AccordionDetails>
+                                    </Accordion>
                                 </Col>
                             </Row>
                     </Col>
