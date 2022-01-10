@@ -216,7 +216,9 @@
 }
 
 .companyPage-researchEntry-AttachmentDropZone-card {
+    animation: fadeIn 1s;
     width: 35%;
+    height: 25rem;
     margin-left: 35%;
 
     .companyPage-researchEntry-AttachmentDropZone-cardHeader {
@@ -236,12 +238,19 @@
     }
 
     .companyPage-researchEntry-AttachmentDropZone-cardBody {
+        height: 17rem;
         padding: 7rem 0;
         cursor: pointer;
 
         &:hover {
-            background: #dbdbdb2e;
+            background: #dbdbdb7a;
         }
+    }
+
+    .companyPage-researchEntry-AttachmentDropZone-cardBody.dragActive {
+        animation: fadeIn 1s;
+        background: #dbdbdb7a;
+        border: 2px dashed #00000052;
     }
 }
 

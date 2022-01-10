@@ -127,16 +127,11 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
 
                                     <Accordion defaultExpanded>
                                         <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
-                                            <h4>Company Details</h4>
-                                        </AccordionSummary>
-                                        <AccordionDetails>Test </AccordionDetails>
-                                    </Accordion>
-
-                                    <Accordion defaultExpanded>
-                                        <AccordionSummary className="border-bottom" expandIcon={<ExpandMoreIcon />}>
                                             <h4>Quality and Fundamentals</h4>
                                         </AccordionSummary>
-                                        <AccordionDetails>Test </AccordionDetails>
+                                        <AccordionDetails>
+                                            Q F
+                                        </AccordionDetails>
                                     </Accordion>
 
                                     <Accordion defaultExpanded>

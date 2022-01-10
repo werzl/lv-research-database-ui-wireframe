@@ -2,8 +2,9 @@ import React, { useCallback } from "react";
 import { Card } from "react-bootstrap";
 import { useDropzone } from "react-dropzone";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import DocumentScannerOutlinedIcon from '@mui/icons-material/DocumentScannerOutlined';
 
-export interface AttachmentDropZoneProps{
+export interface AttachmentDropZoneProps {
     upload: (files: any) => void
 }
 
@@ -21,10 +22,12 @@ const AttachmentDropZone = (props: AttachmentDropZoneProps) => {
                     <h2><CloudUploadIcon width={100} /> Upload</h2>
                 </Card.Header>
 
-                <Card.Body {...getRootProps()} className="companyPage-researchEntry-AttachmentDropZone-cardBody">
+                <Card.Body {...getRootProps()} className={`companyPage-researchEntry-AttachmentDropZone-cardBody ${isDragActive ? "dragActive" : ""}`}>
                     <input {...getInputProps()} />
-                    Drag and drop files here<br />
-                    or <b>click</b> to browse.
+                    <div className={`${isDragActive ? "dragActive" : ""}`}>
+                        Drag and drop files here<br />
+                        or <b>click</b> to browse.
+                    </div>
                 </Card.Body>
             </Card>
         </div>
