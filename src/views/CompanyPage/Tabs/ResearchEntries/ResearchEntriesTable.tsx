@@ -44,11 +44,11 @@ const ResearchEntryRow = (props: TResearchEntry) => {
                 <TableCell className="ps-5">{props.attachments ? props.attachments.count : 0}</TableCell>
 
                 <TableCell>
-                    <p className="comments">
+                    <div className="comments">
                         <Tooltip title={props.comments ?? ""} classes={{ popper: "companyPage-historyTable-comments-tooltip" }} placement="bottom-end">
                             <div className="companyPage-historyTable-comments-cell">{props.comments}</div>
                         </Tooltip>
-                    </p>
+                    </div>
                 </TableCell>
 
                 <TableCell></TableCell>
@@ -72,7 +72,7 @@ const ResearchEntryRow = (props: TResearchEntry) => {
 
                                     <TableBody>
                                         {props.attachments ? props.attachments.list.map(attachment => (
-                                            <TableRow>
+                                            <TableRow key={attachment.filename}>
                                                 <TableCell><a href={window.location.href}>{attachment.filename}</a></TableCell>
                                                 <TableCell>{attachment.type}</TableCell>
                                                 <TableCell>{attachment.description}</TableCell>
@@ -110,7 +110,7 @@ const ResearchEntriesTable = () => {
 
                 <TableBody>
                     {researchEntriesData.map(researchEntry => (
-                        <ResearchEntryRow {...researchEntry} />
+                        <ResearchEntryRow {...researchEntry} key={researchEntry.sourceId} />
                     ))}
                 </TableBody>
             </Table>
