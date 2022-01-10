@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Breadcrumb } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -8,6 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import AttachmentDropZone from "./Attachments/AttachmentDropZone";
 import UploadedAttachments, { NewAttachment } from "./Attachments/UploadedAttachments";
+import { LinkContainer } from "react-router-bootstrap";
 
 export interface NewResearchEntryProps {
     companyName: string,
@@ -40,15 +40,15 @@ const NewResearchEntry = (props: NewResearchEntryProps) => {
                 <Col>
                     <Breadcrumb>
                         <Breadcrumb.Item>
-                            <Link to="/">
-                                Securities
-                            </Link>
+                            <LinkContainer to="/">
+                                <p className="companyPage-breadcrumb-link">Securities</p>
+                            </LinkContainer>
                         </Breadcrumb.Item>
 
                         <Breadcrumb.Item>
-                            <Link to={`/${props.companyName.replaceAll(" ", "")}`}>
-                                {props.companyName}
-                            </Link>
+                            <LinkContainer to={`/${props.companyName.replaceAll(" ", "")}`}>
+                                <p className="companyPage-breadcrumb-link">{props.companyName}</p>
+                            </LinkContainer>
                         </Breadcrumb.Item>
 
                         <Breadcrumb.Item active>

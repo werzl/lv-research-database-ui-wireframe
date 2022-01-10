@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row, Breadcrumb } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 
 export interface ResearchEntryProps {
     companyName: string,
@@ -19,15 +19,15 @@ const ResearchEntry = (props: ResearchEntryProps) => {
                 <Col>
                     <Breadcrumb>
                         <Breadcrumb.Item>
-                            <Link to="/">
-                                Securities
-                            </Link>
+                            <LinkContainer to="/">
+                                <p className="companyPage-breadcrumb-link">Securities</p>
+                            </LinkContainer>
                         </Breadcrumb.Item>
 
                         <Breadcrumb.Item>
-                            <Link to={`/${props.companyName.replaceAll(" ", "")}`}>
-                                {props.companyName}
-                            </Link>
+                            <LinkContainer to={`/${props.companyName.replaceAll(" ", "")}`}>
+                                <p className="companyPage-breadcrumb-link">{props.companyName}</p>
+                            </LinkContainer>
                         </Breadcrumb.Item>
 
                         <Breadcrumb.Item active>
