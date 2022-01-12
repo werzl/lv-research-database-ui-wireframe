@@ -28,16 +28,28 @@ const RatingCard = (props: RatingCardProps) => {
 
                         :
 
-                        <Row>
-                            <Col>
-                                <Form.Select className="mt-0" required={props.required} defaultValue={props.value}>
-                                    <option value={0}>0</option>
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                </Form.Select>
-                            </Col>
-                        </Row>
+                        <>
+                            {props.value > 3 ?
+                                <Row>
+                                    <Col>
+                                        <Form.Control type="number" defaultValue={props.value} />
+                                    </Col>
+                                </Row>
+
+                                :
+
+                                <Row>
+                                    <Col>
+                                        <Form.Select className="mt-0" required={props.required} defaultValue={props.value}>
+                                            <option value={0}>0</option>
+                                            <option value={1}>1</option>
+                                            <option value={2}>2</option>
+                                            <option value={3}>3</option>
+                                        </Form.Select>
+                                    </Col>
+                                </Row>
+                            }
+                        </>
                     }
                 </Col>
 

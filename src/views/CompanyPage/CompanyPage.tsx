@@ -25,6 +25,8 @@ export interface CompanyPageProps {
     price: number,
     currency: string,
     fmv: FMV
+    quality: 0 | 1 | 2 | 3,
+    fundamentals: 0 | 1 | 2 | 3
 }
 
 const CompanyPage = (props: CompanyPageProps) => {
@@ -42,7 +44,8 @@ const CompanyPage = (props: CompanyPageProps) => {
                     currency={props.currency}
                     dateAdded={new Date()}
                     quality={1}
-                    fundamentals={2}/>
+                    fundamentals={2}
+                    fmv={props.fmv}/>
             </Route>
 
             {researchEntriesData.map(row => {
@@ -112,8 +115,8 @@ const CompanyPage = (props: CompanyPageProps) => {
                                                 <TableRow>
                                                     <TableCell>{props.ticker}</TableCell>
                                                     <TableCell>{props.primaryAnalyst}</TableCell>
-                                                    <TableCell>30</TableCell>
-                                                    <TableCell>EUR</TableCell>
+                                                    <TableCell>{props.price}</TableCell>
+                                                    <TableCell>{props.currency}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>
@@ -132,10 +135,10 @@ const CompanyPage = (props: CompanyPageProps) => {
 
                                             <TableBody>
                                                 <TableRow>
-                                                    <TableCell>1</TableCell>
-                                                    <TableCell>2</TableCell>
-                                                    <TableCell>100</TableCell>
-                                                    <TableCell>150</TableCell>
+                                                    <TableCell>{props.quality}</TableCell>
+                                                    <TableCell>{props.fundamentals}</TableCell>
+                                                    <TableCell>{props.fmv.approved.raw.value}</TableCell>
+                                                    <TableCell>{props.fmv.approved.adjusted.value}</TableCell>
                                                 </TableRow>
                                             </TableBody>
                                         </Table>

@@ -99,7 +99,9 @@ function App() {
                           primaryAnalyst={row.primaryAnalyst}
                           price={30}
                           currency="EUR"
-                          fmv={fakeFMV} />
+                          fmv={fakeFMV}
+                          quality={1}
+                          fundamentals={2}/>
                       </Route>
                     )
                   })}
