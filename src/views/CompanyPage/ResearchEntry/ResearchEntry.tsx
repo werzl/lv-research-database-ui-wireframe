@@ -99,7 +99,7 @@ const ResearchEntry = (props: ResearchEntryProps) => {
                                 <Col lg={3}>
                                     <RatingCard
                                         heading="Fundamentals"
-                                        value={2}
+                                        value={3}
                                         icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
 
                                     <Button className="w-100 mt-3 border-0" variant="outline-primary">Approve</Button>

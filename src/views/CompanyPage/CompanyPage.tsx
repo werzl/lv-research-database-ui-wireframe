@@ -57,8 +57,8 @@ const CompanyPage = (props: CompanyPageProps) => {
                             currency={props.currency}
                             dateAdded={row.date}
                             attachments={row.attachments}
-                            quality={2}
-                            fundamentals={3}
+                            quality={props.quality}
+                            fundamentals={props.fundamentals}
                             fmv={props.fmv}
                             comments={row.comments ?? ""} />
                     </Route>
