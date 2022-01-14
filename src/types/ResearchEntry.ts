@@ -9,7 +9,7 @@ export type Attachment = {
 export type TResearchEntry = {
     sourceId: string,
     date: Date,
-    attachments?: {
+    attachments: {
         count: number,
         list: Attachment[]
     },
