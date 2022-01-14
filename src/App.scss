@@ -1,3 +1,28 @@
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .App {
   text-align: center;
 }
@@ -70,4 +95,12 @@
   border-radius: 6px;
   margin-bottom: 2rem;
   box-shadow: #00000052 1px 1px 10px 0px;
+}
+
+.card {
+  border-radius: 1rem !important;
+}
+
+.Toastify__toast-container {
+  top: 6em !important;
 }

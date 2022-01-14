@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Navigation from "./components/Navigation/Navigation";
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
@@ -59,6 +61,8 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
+
       <Router>
         {user !== null &&
           <Row>
@@ -87,7 +91,7 @@ function App() {
 
                   {companies.rows.map((row: any) => {
                     return (
-                      <Route path={`/${row.security.replaceAll(" ", "")}`}>
+                      <Route path={`/${row.security.replaceAll(" ", "")}`} key={row.id}>
                         <CompanyPage
                           key={row.id}
                           companyName={row.security}
@@ -95,7 +99,9 @@ function App() {
                           primaryAnalyst={row.primaryAnalyst}
                           price={30}
                           currency="EUR"
-                          fmv={fakeFMV} />
+                          fmv={fakeFMV}
+                          quality={1}
+                          fundamentals={2}/>
                       </Route>
                     )
                   })}

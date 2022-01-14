@@ -36,19 +36,19 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
             </Row>
 
             <Row>
-                <Col lg={3}>
+                <Col lg={2}>
                     <RatingCard heading="Quality" value={1} icon={<Check className="companyPage-rating-card-check" />} />
                 </Col>
 
-                <Col lg={3}>
+                <Col lg={2}>
                     <RatingCard heading="Fundamentals" value={2} icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
                 </Col>
 
-                <Col lg={3}>
+                <Col lg={2}>
                     <RatingCard heading="FMV" value={props.fmv.approved.raw.value} icon={<ShowChartIcon className="companyPage-rating-card-fmv" />} />
                 </Col>
 
-                <Col lg={3}>
+                <Col lg={2}>
                     <RatingCard heading="FMV (Adjusted)" value={props.fmv.approved.adjusted.value} icon={<SsidChartIcon className="companyPage-rating-card-fmv" />} />
                 </Col>
 
@@ -56,19 +56,16 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
                     <Tooltip title="Most recently approved ratings." classes={{ popper: "companyPage-rating-info-tooltip" }} placement="top">
                         <div style={{ cursor: "pointer", width: "10%" }}><InfoIcon /></div>
                     </Tooltip>
-                </Col>
-            </Row>
-
-            <Row className="mt-3">
-                <Col lg={3}>
                     <p>
-                        The above information is from the most recently approved research entry. FMV was updated on {props.fmv.approved.raw.timestamp.toLocaleDateString()}.
+                        This information is from the most recently approved research entry. FMV was updated on {props.fmv.approved.raw.timestamp.toLocaleDateString()}.
                         <br /><br />
                         You can view the most recently approved research entry <Link to={props.researchEntryLink}>here</Link>.
                     </p>
                 </Col>
+            </Row>
 
-                <Col>
+            <Row className="mt-3">
+                <Col lg={6}>
                     <Card>
                         <Card.Body>
                             <Table className="companyPage-rating-approved-rates-table">

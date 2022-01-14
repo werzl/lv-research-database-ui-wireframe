@@ -1,3 +1,9 @@
+.companyPage-breadcrumb-link {
+    color: #0d6efd;
+    text-decoration: underline;
+    display: inline;
+}
+
 .companyPage-tagLine {
     color: #a5a5a5;
 }
@@ -6,6 +12,10 @@
     height: auto;
     overflow-y: auto;
     overflow-x: auto;
+
+    .companyStat {
+        margin: 0 1rem;
+    }
 
     th {
         text-align: center;
@@ -168,30 +178,22 @@
     .attachments-collapse {
         border-bottom: 3px solid #00000042;
     }
+}
+.attachments-table {
+    th {
+        color: grey;
+    }
 
-    .attachments-table {
-        th {
-            color: grey;
-        }
+    td {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
 
-        td {
-            font-size: 0.9rem;
-            padding: 0.75rem;
-        }
+    .filename {
+        width: 25%;
+        overflow-x: auto;
     }
 }
-
-// .companyPage-historyTable-attachments {
-//     text-align: center !important;
-// }
-
-// .companyPage-historyTable-comments-cell {
-//     text-align: justify;
-//     text-overflow: ellipsis;
-//     width: 100%;
-//     cursor: pointer;
-//     overflow: hidden;
-// }
 
 .companyPage-historyTable-comments-tooltip {
     border-radius: 8px;
@@ -204,16 +206,101 @@
     }
 }
 
-// .companyPage-historyTable-newEntryButton {
-//     border: none;
-//     font-size: 1.5rem;
-// }
-
 // Price History
 .companyPage-priceHistory-quality-graph,
 .companyPage-priceHistory-fundamentals-graph {
     canvas {
         height: 150px !important;
         width: 100% !important;
+    }
+}
+
+// Research Entry
+.companyPage-researchEntry-AttachmentDropZone-container {
+    padding: 2rem;
+}
+
+.companyPage-researchEntry-AttachmentDropZone-card {
+    animation: fadeIn 1s;
+    width: 35%;
+    height: 25rem;
+    margin-left: 35%;
+
+    .companyPage-researchEntry-AttachmentDropZone-cardHeader {
+        height: 8rem;
+        background-color: #56aaff;
+
+        h2 {
+            margin-top: 2rem;
+            color: white;
+
+            svg {
+                height: 4rem;
+                width: auto;
+                padding-right: 2rem;
+            }
+        }
+    }
+
+    .companyPage-researchEntry-AttachmentDropZone-cardBody {
+        height: 17rem;
+        padding: 7rem 0;
+        cursor: pointer;
+
+        &:hover {
+            background: #dbdbdb7a;
+        }
+    }
+
+    .companyPage-researchEntry-AttachmentDropZone-cardBody.dragActive {
+        animation: fadeIn 1s;
+        background: #dbdbdb7a;
+        border: 2px dashed #00000052;
+    }
+}
+
+// New Research Entry
+.float {
+    z-index: 999;
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    top: 8rem;
+    right: 7rem;
+    background-color: #56aaff;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    cursor: pointer;
+
+    .float-button {
+        margin-top: 10px;
+        border: none;
+        background: none;
+        color: white;
+
+        svg {
+            width: auto;
+            height: 4rem;
+        }
+    }
+}
+
+.float:hover {
+    width: 80px;
+    height: 80px;
+
+    .float-button {
+        margin-top: 16px;
+    }
+}
+
+.companyPage-newReserachEntry-uploadedAttachments-delete-icon-cell {
+    width: 1rem;
+
+    button {
+        padding: 0.25rem !important;
+        border: none;
     }
 }
