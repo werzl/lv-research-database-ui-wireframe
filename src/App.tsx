@@ -85,8 +85,12 @@ function App() {
                     <ResearchDashboard />
                   </Route>
 
-                  <Route exact path="/ResearchDiary">
+                  <Route exact path="/Diary">
                     <ResearchDiary />
+                  </Route>
+
+                  <Route exact path="/Admin">
+                    Admin Console
                   </Route>
 
                   {companies.rows.map((row: any) => {
@@ -101,7 +105,7 @@ function App() {
                           currency="EUR"
                           fmv={fakeFMV}
                           quality={1}
-                          fundamentals={2}/>
+                          fundamentals={2} />
                       </Route>
                     )
                   })}

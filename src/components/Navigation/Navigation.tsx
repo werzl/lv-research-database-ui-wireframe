@@ -27,8 +27,8 @@ const Navigation = (props: NavigationProps) => {
                         <Nav.Link>Diary</Nav.Link>
                     </LinkContainer>
 
-                    <LinkContainer to="/Team">
-                        <Nav.Link>Team</Nav.Link>
+                    <LinkContainer to="/Admin">
+                        <Nav.Link>Admin</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Navbar.Collapse>
