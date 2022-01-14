@@ -19,6 +19,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 export interface CompanyPageRatingProps {
+    quality: 0 | 1 | 2 | 3,
+    fundamentals: 0 | 1 | 2 | 3,
     fmv: FMV,
     researchEntryLink: string
 }
@@ -37,11 +39,11 @@ const CompanyPageRating = (props: CompanyPageRatingProps) => {
 
             <Row>
                 <Col lg={2}>
-                    <RatingCard heading="Quality" value={1} icon={<Check className="companyPage-rating-card-check" />} />
+                    <RatingCard heading="Quality" value={props.quality} icon={<Check className="companyPage-rating-card-check" />} />
                 </Col>
 
                 <Col lg={2}>
-                    <RatingCard heading="Fundamentals" value={2} icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
+                    <RatingCard heading="Fundamentals" value={props.fundamentals} icon={<BarChartIcon className="companyPage-rating-card-fundamentals" />} />
                 </Col>
 
                 <Col lg={2}>
