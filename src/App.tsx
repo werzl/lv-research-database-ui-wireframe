@@ -5,8 +5,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navigation from "./components/Navigation/Navigation";
+
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
 import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
+import AdminConsole from "./views/AdminConsole/AdminConsole";
 
 import { companiesData } from "./views/ResearchDashboard/CompaniesTable/companiesData";
 import CompanyPage from "./views/CompanyPage/CompanyPage";
@@ -90,7 +92,7 @@ function App() {
                   </Route>
 
                   <Route exact path="/Admin">
-                    Admin Console
+                    <AdminConsole />
                   </Route>
 
                   {companies.rows.map((row: any) => {
