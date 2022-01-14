@@ -42,13 +42,11 @@ const Navigation = (props: NavigationProps) => {
             }
 
             {props.user !== null &&
-                <>
-                    <LinkContainer to="/Login" onClick={() => props.onLogout()}>
-                        <Nav.Link>
-                            <LogoutIcon className="navigation-navbar-logoutLink"/>
-                        </Nav.Link>
-                    </LinkContainer>
-                </>
+                <LinkContainer to="/Login" onClick={() => props.onLogout()}>
+                    <Nav.Link>
+                        <LogoutIcon className="navigation-navbar-logoutLink" />
+                    </Nav.Link>
+                </LinkContainer>
             }
 
         </Navbar>
