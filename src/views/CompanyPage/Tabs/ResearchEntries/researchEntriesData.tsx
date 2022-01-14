@@ -50,14 +50,8 @@ export const researchEntriesData: TResearchEntry[] = [
         sourceId: "sourceId3",
         date: randomDate(today, lastYear),
         attachments: {
-            count: 1,
-            list: [
-                {
-                    filename: "test.docx",
-                    type: "Other",
-                    description: ""
-                }
-            ]
+            count: 0,
+            list: []
         },
         comments: "Pellentesque vitae ipsum ligula. Nam imperdiet, urna ut consequat varius, tellus ante dignissim ex, porttitor luctus nibh erat id lectus. Nullam ac lectus et dui ultricies maximus ut ac nibh. Suspendisse potenti. Sed tempor venenatis cursus. Phasellus urna lorem, vulputate id bibendum dictum, tristique vel nisi. Aliquam diam ex, euismod at placerat sit amet, vehicula sed diam. Proin in risus diam. Duis id ex ex. Nullam finibus, leo at pulvinar varius, nibh nulla sollicitudin nisi, id ullamcorper augue massa sit amet felis. Sed interdum, tortor ac ornare imperdiet, augue sem laoreet lacus, et dictum mi turpis non metus. Duis volutpat dolor at felis vulputate, at eleifend nisl lacinia. Sed eget fringilla mauris, id maximus enim. Nam dignissim, arcu vel tincidunt ultrices, justo nisi accumsan ipsum, quis accumsan libero ante vitae dui. Duis a consequat lorem."
     },

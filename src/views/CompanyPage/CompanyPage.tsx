@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Tabs, Tab, Breadcrumb } from "react-bootstrap";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-import { FMV } from "../../types/FMV";
-import "./CompanyPage.scss";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import { LinkContainer } from "react-router-bootstrap";
 
+import { FMV } from "../../types/FMV";
+import CompanyStats from "../../components/CompanyStats/CompanyStats";
 import CompanyPageRating from "./Tabs/Rating/CompanyPageRating";
 import ResearchEntriesTable from "./Tabs/ResearchEntries/ResearchEntriesTable";
 import { researchEntriesData } from "./Tabs/ResearchEntries/researchEntriesData";
@@ -16,7 +12,8 @@ import PriceHistory from "./Tabs/PriceHistory/PriceHistory";
 
 import ResearchEntry from "./ResearchEntry/ResearchEntry";
 import NewResearchEntry from "./NewResearchEntry/NewResearchEntry";
-import { LinkContainer } from "react-router-bootstrap";
+
+import "./CompanyPage.scss";
 
 export interface CompanyPageProps {
     companyName: string,
@@ -24,7 +21,7 @@ export interface CompanyPageProps {
     primaryAnalyst: string,
     price: number,
     currency: string,
-    fmv: FMV
+    fmv: FMV,
     quality: 0 | 1 | 2 | 3,
     fundamentals: 0 | 1 | 2 | 3
 }
@@ -43,18 +40,26 @@ const CompanyPage = (props: CompanyPageProps) => {
                     price={props.price}
                     currency={props.currency}
                     dateAdded={new Date()}
-                    quality={1}
-                    fundamentals={2}
-                    fmv={props.fmv}/>
+                    quality={props.quality}
+                    fundamentals={props.fundamentals}
+                    fmv={props.fmv} />
             </Route>
 
             {researchEntriesData.map(row => {
                 return (
                     <Route path={`/${props.companyName.replaceAll(" ", "")}/${row.sourceId}`} key={row.sourceId}>
                         <ResearchEntry
-                            companyName={props.companyName}
-                            dateAdded={row.date}
                             id={row.sourceId}
+                            companyName={props.companyName}
+                            ticker={props.ticker}
+                            primaryAnalyst={props.primaryAnalyst}
+                            price={props.price}
+                            currency={props.currency}
+                            dateAdded={row.date}
+                            attachments={row.attachments}
+                            quality={2}
+                            fundamentals={3}
+                            fmv={props.fmv}
                             comments={row.comments ?? ""} />
                     </Route>
                 )
@@ -98,75 +103,14 @@ const CompanyPage = (props: CompanyPageProps) => {
 
                     <Row className="mt-3">
                         <Col>
-                            <div className="companyPage-companyStats">
-                                <Row className="w-100">
-                                    <Col lg={3} className="companyStat">
-                                        <Table>
-                                            <TableHead>
-                                                <TableRow>
-                                                    <TableCell>Ticker</TableCell>
-                                                    <TableCell>Primary Analyst</TableCell>
-                                                    <TableCell>Price</TableCell>
-                                                    <TableCell>Currency</TableCell>
-                                                </TableRow>
-                                            </TableHead>
-
-                                            <TableBody>
-                                                <TableRow>
-                                                    <TableCell>{props.ticker}</TableCell>
-                                                    <TableCell>{props.primaryAnalyst}</TableCell>
-                                                    <TableCell>{props.price}</TableCell>
-                                                    <TableCell>{props.currency}</TableCell>
-                                                </TableRow>
-                                            </TableBody>
-                                        </Table>
-                                    </Col>
-
-                                    <Col lg={3} className="companyStat">
-                                        <Table>
-                                            <TableHead>
-                                                <TableRow>
-                                                    <TableCell>Quality</TableCell>
-                                                    <TableCell>Fundamentals</TableCell>
-                                                    <TableCell>FMV</TableCell>
-                                                    <TableCell>FMV (Adjusted)</TableCell>
-                                                </TableRow>
-                                            </TableHead>
-
-                                            <TableBody>
-                                                <TableRow>
-                                                    <TableCell>{props.quality}</TableCell>
-                                                    <TableCell>{props.fundamentals}</TableCell>
-                                                    <TableCell>{props.fmv.approved.raw.value}</TableCell>
-                                                    <TableCell>{props.fmv.approved.adjusted.value}</TableCell>
-                                                </TableRow>
-                                            </TableBody>
-                                        </Table>
-                                    </Col>
-
-                                    <Col className="companyStat">
-                                        <Table>
-                                            <TableHead>
-                                                <TableRow>
-                                                    <TableCell>Forward P/E at Current Price</TableCell>
-                                                    <TableCell>Forward P/E at FMV</TableCell>
-                                                    <TableCell>Forward P/E at Adjusted FMV</TableCell>
-                                                    <TableCell>Upside to Adjusted FMV</TableCell>
-                                                </TableRow>
-                                            </TableHead>
-
-                                            <TableBody>
-                                                <TableRow>
-                                                    <TableCell>25.64</TableCell>
-                                                    <TableCell>50.3</TableCell>
-                                                    <TableCell>55.2</TableCell>
-                                                    <TableCell>35%</TableCell>
-                                                </TableRow>
-                                            </TableBody>
-                                        </Table>
-                                    </Col>
-                                </Row>
-                            </div>
+                            <CompanyStats
+                                ticker={props.ticker}
+                                primaryAnalyst={props.primaryAnalyst}
+                                price={props.price}
+                                currency={props.currency}
+                                quality={1}
+                                fundamentals={2}
+                                fmv={props.fmv} />
                         </Col>
                     </Row>
 
