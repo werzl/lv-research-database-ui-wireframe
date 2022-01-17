@@ -1,11 +1,13 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 
 import AdminTable from "./AdminTable/AdminTable";
 
 import "./AdminConsole.scss";
 
 const AdminConsole = () => {
+    const [defaultTab, setDefaultTab] = useState<"pending" | "approvalNotRequired">("pending");
+
     return (
         <Container className="mt-5 h-100">
             <Row>
@@ -16,7 +18,19 @@ const AdminConsole = () => {
 
             <Row className="mt-5">
                 <Col>
-                    <AdminTable />
+                    <Tabs
+                        defaultActiveKey={defaultTab}
+                        transition={true}
+                        className="mb-3">
+
+                        <Tab eventKey="pending" title="Pending Approval" onClick={() => setDefaultTab("pending")}>
+                            <AdminTable />
+                        </Tab>
+
+                        <Tab eventKey="approvalNotRequired" title="Approval Not Required" onClick={() => setDefaultTab("approvalNotRequired")}>
+                            test
+                        </Tab>
+                    </Tabs>
                 </Col>
             </Row>
         </Container>
