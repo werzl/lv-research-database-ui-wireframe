@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 
-import AdminTable from "./AdminTable/AdminTable";
+import AdminTable from "./PendingTable/PendingTable";
 
 import "./AdminConsole.scss";
 

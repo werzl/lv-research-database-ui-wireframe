@@ -6,7 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import { RatingData } from "../../../../types/AdminEntry";
+import { RatingData } from "../../../../types/AdminConsole";
 
 export interface RatingDataProps {
     title: "Quality" | "Fundamentals" | "FMV",

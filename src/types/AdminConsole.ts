@@ -4,7 +4,7 @@ export type RatingData = {
     updatedDate: Date
 }
 
-export type AdminEntry = {
+export type AdminPendingEntry = {
     security: string,
     ticker: string,
     quality?: {
