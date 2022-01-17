@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 
-import AdminTable from "./PendingTable/PendingTable";
+import PendingTable from "./PendingTable/PendingTable";
+import DNRA from "./DNRA/DNRA";
 
 import "./AdminConsole.scss";
 
@@ -24,11 +25,11 @@ const AdminConsole = () => {
                         className="mb-3">
 
                         <Tab eventKey="pending" title="Pending Approval" onClick={() => setDefaultTab("pending")}>
-                            <AdminTable />
+                            <PendingTable />
                         </Tab>
 
                         <Tab eventKey="approvalNotRequired" title="Approval Not Required" onClick={() => setDefaultTab("approvalNotRequired")}>
-                            test
+                            <DNRA />
                         </Tab>
                     </Tabs>
                 </Col>

@@ -13,10 +13,10 @@ import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { AdminPendingEntry } from "../../../types/AdminConsole";
-import RatingDataTable from "./RatingDataTable/RatingDataTable";
-import { pendingTableData } from "./pendingTableData";
+import DnraRatingDataTable from "./DnraRatingDataTable/DnraRatingDataTable";
+import { dnraData } from "./dnraData";
 
-const PendingTableRow = (props: AdminPendingEntry) => {
+const DnraTableRow = (props: AdminPendingEntry) => {
 	const [open, setOpen] = useState<boolean>(true);
 
 	return (
@@ -45,11 +45,11 @@ const PendingTableRow = (props: AdminPendingEntry) => {
 				<TableCell colSpan={6} className="p-0">
 					<Collapse in={open} timeout="auto" unmountOnExit className="attachments-collapse">
 						<Row className="m-5 mt-1">
-							<RatingDataTable title="Quality" data={props.quality} />
+							<DnraRatingDataTable title="Quality" data={props.quality} />
 
-							<RatingDataTable title="Fundamentals" data={props.fundamentals} />
+							<DnraRatingDataTable title="Fundamentals" data={props.fundamentals} />
 
-							<RatingDataTable title="FMV" data={props.fmv} />
+							<DnraRatingDataTable title="FMV" data={props.fmv} />
 						</Row>
 					</Collapse>
 				</TableCell>
@@ -71,8 +71,8 @@ const PendingTable = () => {
 				</TableHead>
 
 				<TableBody>
-					{pendingTableData.map(row => (
-						<PendingTableRow {...row} key={row.security} />
+					{dnraData.map(row => (
+						<DnraTableRow {...row} key={row.security} />
 					))}
 				</TableBody>
 			</Table>
