@@ -19,7 +19,7 @@ const Navigation = (props: NavigationProps) => {
 
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <LinkContainer to="/">
+                    <LinkContainer exact to="/">
                         <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
 
