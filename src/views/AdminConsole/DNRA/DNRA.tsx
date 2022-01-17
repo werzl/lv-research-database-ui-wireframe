@@ -58,7 +58,7 @@ const DnraTableRow = (props: AdminPendingEntry) => {
 	)
 }
 
-const PendingTable = () => {
+const DNRA = () => {
 	return (
 		<div className="companyPage-historyTable-adminTable-container pending-table">
 			<Table size="small" className="w-100" stickyHeader>
@@ -80,4 +80,4 @@ const PendingTable = () => {
 	);
 };
 
-export default PendingTable;
+export default DNRA;

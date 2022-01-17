@@ -6,46 +6,6 @@ const lastYear = new Date(new Date(today).setFullYear(today.getFullYear() - 1));
 
 export const dnraData: AdminPendingEntry[] = [
 	{
-		security: "1&1 AG",
-		ticker: "1u1 GR",
-		quality: {
-			approved: {
-				value: 1,
-				updatedBy: "guncm",
-				updatedDate: randomDate(today, lastYear)
-			},
-			unapproved: {
-				value: 2,
-				updatedBy: "sellarsj",
-				updatedDate: today
-			}
-		},
-		fundamentals: {
-			approved: {
-				value: 2,
-				updatedBy: "hewitta",
-				updatedDate: randomDate(today, lastYear)
-			},
-			unapproved: {
-				value: 1,
-				updatedBy: "guncm",
-				updatedDate: today
-			}
-		},
-		fmv: {
-			approved: {
-				value: 100,
-				updatedBy: "hewitta",
-				updatedDate: randomDate(today, lastYear)
-			},
-			unapproved: {
-				value: 120,
-				updatedBy: "guncm",
-				updatedDate: today
-			}
-		}
-	},
-	{
 		security: "10x Genomics Inc Class A",
 		ticker: "TXG US",
 		quality: {
@@ -92,7 +52,7 @@ export const dnraData: AdminPendingEntry[] = [
 	{
 		security: "2U Inc",
 		ticker: "TWOU US",
-		fundamentals: {
+		quality: {
 			approved: {
 				value: 1,
 				updatedBy: "jonesp",
@@ -116,5 +76,45 @@ export const dnraData: AdminPendingEntry[] = [
 				updatedDate: today
 			}
 		},
-	}
+	},
+	{
+		security: "1&1 AG",
+		ticker: "1u1 GR",
+		quality: {
+			approved: {
+				value: 1,
+				updatedBy: "guncm",
+				updatedDate: randomDate(today, lastYear)
+			},
+			unapproved: {
+				value: 2,
+				updatedBy: "sellarsj",
+				updatedDate: today
+			}
+		},
+		fundamentals: {
+			approved: {
+				value: 2,
+				updatedBy: "hewitta",
+				updatedDate: randomDate(today, lastYear)
+			},
+			unapproved: {
+				value: 1,
+				updatedBy: "guncm",
+				updatedDate: today
+			}
+		},
+		fmv: {
+			approved: {
+				value: 100,
+				updatedBy: "hewitta",
+				updatedDate: randomDate(today, lastYear)
+			},
+			unapproved: {
+				value: 120,
+				updatedBy: "guncm",
+				updatedDate: today
+			}
+		}
+	},
 ];

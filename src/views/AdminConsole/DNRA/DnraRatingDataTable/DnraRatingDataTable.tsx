@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 
 import { RatingData } from "../../../../types/AdminConsole";
 
-export interface RatingDataProps {
+export interface DnraRatingDataTableProps {
     title: "Quality" | "Fundamentals" | "FMV",
     data?: {
         approved: RatingData,
@@ -16,7 +16,7 @@ export interface RatingDataProps {
     }
 }
 
-const RatingDataTable = (props: RatingDataProps) => {
+const DnraRatingDataTable = (props: DnraRatingDataTableProps) => {
     return (
         <Col lg={4}>
             <Row>
@@ -64,4 +64,4 @@ const RatingDataTable = (props: RatingDataProps) => {
     )
 };
 
-export default RatingDataTable;
+export default DnraRatingDataTable;
