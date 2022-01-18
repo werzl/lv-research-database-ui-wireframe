@@ -57,8 +57,8 @@ const CompanyPage = (props: CompanyPageProps) => {
                             currency={props.currency}
                             dateAdded={row.date}
                             attachments={row.attachments}
-                            quality={2}
-                            fundamentals={3}
+                            quality={props.quality}
+                            fundamentals={props.fundamentals}
                             fmv={props.fmv}
                             comments={row.comments ?? ""} />
                     </Route>
@@ -108,8 +108,8 @@ const CompanyPage = (props: CompanyPageProps) => {
                                 primaryAnalyst={props.primaryAnalyst}
                                 price={props.price}
                                 currency={props.currency}
-                                quality={1}
-                                fundamentals={2}
+                                quality={props.quality}
+                                fundamentals={props.fundamentals}
                                 fmv={props.fmv} />
                         </Col>
                     </Row>
@@ -123,7 +123,11 @@ const CompanyPage = (props: CompanyPageProps) => {
                                 className="mb-3">
 
                                 <Tab eventKey="rating" title="Rating" onClick={() => setDefaultTab("rating")}>
-                                    <CompanyPageRating fmv={props.fmv} researchEntryLink={`/${props.companyName.replaceAll(" ", "")}/sourceid1`} />
+                                    <CompanyPageRating
+                                        quality={props.quality}
+                                        fundamentals={props.fundamentals}
+                                        fmv={props.fmv}
+                                        researchEntryLink={`/${props.companyName.replaceAll(" ", "")}/sourceid1`} />
                                 </Tab>
 
                                 <Tab eventKey="entries" title="Research Entries" onClick={() => setDefaultTab("entries")}>

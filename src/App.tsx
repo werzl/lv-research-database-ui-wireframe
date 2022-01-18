@@ -5,8 +5,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navigation from "./components/Navigation/Navigation";
+
 import ResearchDashboard from './views/ResearchDashboard/ResearchDashboard';
 import ResearchDiary from "./views/ResearchDiary/ResearchDiary";
+import AdminConsole from "./views/AdminConsole/AdminConsole";
 
 import { companiesData } from "./views/ResearchDashboard/CompaniesTable/companiesData";
 import CompanyPage from "./views/CompanyPage/CompanyPage";
@@ -85,8 +87,12 @@ function App() {
                     <ResearchDashboard />
                   </Route>
 
-                  <Route exact path="/ResearchDiary">
+                  <Route exact path="/Diary">
                     <ResearchDiary />
+                  </Route>
+
+                  <Route exact path="/Admin">
+                    <AdminConsole />
                   </Route>
 
                   {companies.rows.map((row: any) => {
@@ -101,7 +107,7 @@ function App() {
                           currency="EUR"
                           fmv={fakeFMV}
                           quality={1}
-                          fundamentals={2}/>
+                          fundamentals={2} />
                       </Route>
                     )
                   })}

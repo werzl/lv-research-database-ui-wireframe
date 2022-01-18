@@ -19,7 +19,7 @@ const Navigation = (props: NavigationProps) => {
 
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <LinkContainer to="/">
+                    <LinkContainer exact to="/">
                         <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
 
@@ -27,8 +27,8 @@ const Navigation = (props: NavigationProps) => {
                         <Nav.Link>Diary</Nav.Link>
                     </LinkContainer>
 
-                    <LinkContainer to="/Team">
-                        <Nav.Link>Team</Nav.Link>
+                    <LinkContainer to="/Admin">
+                        <Nav.Link>Admin</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Navbar.Collapse>
@@ -42,13 +42,11 @@ const Navigation = (props: NavigationProps) => {
             }
 
             {props.user !== null &&
-                <>
-                    <LinkContainer to="/Login" onClick={() => props.onLogout()}>
-                        <Nav.Link>
-                            <LogoutIcon className="navigation-navbar-logoutLink"/>
-                        </Nav.Link>
-                    </LinkContainer>
-                </>
+                <LinkContainer to="/Login" onClick={() => props.onLogout()}>
+                    <Nav.Link>
+                        <LogoutIcon className="navigation-navbar-logoutLink" />
+                    </Nav.Link>
+                </LinkContainer>
             }
 
         </Navbar>
