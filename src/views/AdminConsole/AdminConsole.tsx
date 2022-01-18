@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 
 import PendingTable from "./PendingTable/PendingTable";
-import DNRA from "./DNRA/DNRA";
+import DNRA from "./DoesNotRequireApprovalTable/DNRA";
 
 import "./AdminConsole.scss";
 
